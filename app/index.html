@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minha Coleção — Amigurumis Natalinos de Luxo</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f3d2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Minha Coleção">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icone-192.png">
+<link rel="apple-touch-icon" href="icone-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..900;1,9..144,500..800&family=Nunito+Sans:opsz,wght@6..12,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crema:#fbf7f0;--crema-2:#f3ece2;--crema-3:#efede4;--blanco:#fff;
+  --vino:#7a1f2b;--vino-hover:#5e1620;--bosque:#1f3d2e;--bosque-hondo:#172e22;
+  --oro:#b8914a;--oro-claro:#d9c39a;--oro-hondo:#a27d3b;--oro-texto:#7f6128;
+  --texto:#2b2422;--texto-suave:#5e574f;--gris:#6f675e;--borde:#ece3d6;--unidad:#f6f2ec;
+  --oro-metal:linear-gradient(140deg,#f3dfae 0%,#b8914a 30%,#fbeec8 50%,#9c7a3c 72%,#e9d3a1 100%);
+  --vino-metal:linear-gradient(180deg,#9a2c3d,#6f1b27);
+  --oro-etiqueta:linear-gradient(180deg,#f8e9bf,#dcbb73);
+  --sombra:0 8px 22px -16px #2b24224d;--sombra-alta:0 24px 56px -24px #2b242266;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Nunito Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --nav:68px;--safe-b:env(safe-area-inset-bottom);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--crema);color:var(--texto);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);margin:0;letter-spacing:-.01em;line-height:1.15}
+p{margin:0}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+em{font-family:var(--serif);font-style:italic;color:var(--vino)}
+:focus-visible{outline:3px solid var(--vino);outline-offset:3px;border-radius:10px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Estrutura ---------- */
+.app{max-width:560px;margin:0 auto;min-height:100vh;min-height:100dvh;position:relative;background:var(--crema);padding-bottom:calc(var(--nav) + var(--safe-b) + 18px)}
+@media (min-width:900px){
+  body{background:radial-gradient(70% 60% at 50% 0,#264b3a,#122419 70%)}
+  .app{box-shadow:0 30px 80px -30px #000;border-left:1px solid #0003;border-right:1px solid #0003}
+}
+.topo{position:relative;overflow:hidden;color:var(--crema);padding:calc(env(safe-area-inset-top) + 18px) 20px 54px;
+  background:radial-gradient(85% 70% at 50% 40%,#3c6c5280,transparent 72%),linear-gradient(180deg,var(--bosque),#122419)}
+.topo.compacto{padding-bottom:40px}
+.topo-in{position:relative;z-index:2}
+.topo-linha{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.marca{display:flex;align-items:center;gap:10px;font-weight:800;font-size:13px;letter-spacing:.04em;color:var(--oro-claro)}
+.marca-selo{width:34px;height:34px;border-radius:50%;background:var(--oro-metal);display:grid;place-items:center;color:var(--vino);box-shadow:0 6px 16px -8px #000}
+.voltar{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:14px;color:var(--oro-claro);min-height:40px}
+.topo h1{font-size:clamp(26px,7vw,34px);color:#fffaf1}
+.topo h1 em{color:#f3dca4}
+.topo p.sub{margin-top:8px;color:#fbf7f0d6;font-size:15px}
+.nevado{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:34px;z-index:1}
+.guirlanda{position:absolute;top:0;left:0;right:0;height:26px;display:flex;justify-content:center;overflow:hidden;z-index:1;pointer-events:none}
+.foco{flex:0 0 56px;height:26px;position:relative;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='18'%3E%3Cpath d='M0 1 Q28 18 56 1' fill='none' stroke='%23D9C39A' stroke-opacity='.5' stroke-width='1.3'/%3E%3C/svg%3E") 0 0/56px 18px no-repeat}
+.foco::after{content:"";position:absolute;top:10px;left:24px;width:8px;height:11px;border-radius:50%/42% 42% 58% 58%;--l:#e7bf62;background:radial-gradient(circle at 38% 30%,#ffffffd9 0 16%,var(--l) 46%);box-shadow:0 0 6px 1px var(--l),0 0 14px 3px color-mix(in srgb,var(--l) 50%,transparent);animation:titila 2.6s ease-in-out infinite}
+.foco:nth-child(4n+2)::after{--l:#b3263a;animation-delay:-1.2s}.foco:nth-child(4n+3)::after{--l:#fff1cf;animation-delay:-.5s}.foco:nth-child(4n+4)::after{--l:#3f7d5c;animation-delay:-2s}
+@keyframes titila{50%{opacity:.4}}
+canvas.neve{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+.conteudo{padding:0 18px;margin-top:-26px;position:relative;z-index:3}
+.secao{margin-top:26px}
+.secao-cab{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px}
+.secao-cab h2{font-size:21px}
+.secao-cab a,.secao-cab button{font-size:13px;font-weight:800;color:var(--vino)}
+.ceja{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--vino);
+  background:linear-gradient(180deg,#fffcf4,#f6ead0) padding-box,var(--oro-metal) border-box;border:1px solid transparent;border-radius:999px;padding:5px 12px;margin-bottom:10px}
+
+/* ---------- Cartões ---------- */
+.card{background:var(--blanco);border:1px solid var(--borde);border-radius:20px;box-shadow:var(--sombra)}
+.card-ouro{background:linear-gradient(var(--blanco),var(--blanco)) padding-box,var(--oro-metal) border-box;border:1.5px solid transparent;box-shadow:var(--sombra-alta)}
+.boasvindas{padding:18px;display:grid;gap:14px}
+.progresso-linha{display:flex;align-items:center;gap:14px}
+.anel{--p:0;width:64px;height:64px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
+  background:conic-gradient(var(--vino) calc(var(--p)*1%),var(--unidad) 0);position:relative}
+.anel::before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--blanco)}
+.anel b{position:relative;font-family:var(--serif);font-size:16px;color:var(--vino)}
+.progresso-txt b{font-family:var(--serif);font-size:18px;display:block}
+.progresso-txt span{font-size:13.5px;color:var(--texto-suave)}
+.proximo{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--unidad);border:1px dashed var(--oro-claro)}
+.proximo-ico{width:38px;height:38px;border-radius:12px;background:var(--vino-metal);color:#fff;display:grid;place-items:center;flex-shrink:0}
+.proximo small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro-texto)}
+.proximo span{font-weight:700;font-size:14.5px;line-height:1.35}
+.contagem{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--texto-suave)}
+.contagem b{font-family:var(--serif);color:var(--vino);font-size:18px}
+
+.atalhos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.atalho{position:relative;overflow:hidden;border-radius:18px;min-height:132px;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#fff;box-shadow:var(--sombra-alta);isolation:isolate}
+.atalho img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}
+.atalho::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 20%,#0f1f17e6 100%)}
+.atalho:active img{transform:scale(1.04)}
+.atalho b{font-family:var(--serif);font-size:17px;line-height:1.15}
+.atalho small{font-size:12px;color:#f3dca4;font-weight:700}
+.atalho.largo{grid-column:1/-1;min-height:150px}
+.pilula{position:absolute;top:10px;left:10px;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--oro-etiqueta);color:var(--vino-hover);border:1px solid #9c7a3c80}
+.pilula.vinho{background:var(--vino-metal);color:#fff;border-color:#e9d3a1aa}
+
+.lista{display:grid;gap:10px}
+.item{display:flex;align-items:center;gap:13px;padding:13px 14px;background:var(--blanco);border:1px solid var(--borde);border-radius:16px;box-shadow:var(--sombra);text-align:left;width:100%}
+.item-ico{width:44px;height:44px;border-radius:13px;background:var(--unidad);color:var(--oro-hondo);display:grid;place-items:center;flex-shrink:0;overflow:hidden}
+.item-ico img{width:100%;height:100%;object-fit:cover}
+.item-txt{flex:1;min-width:0}
+.item-txt b{display:block;font-size:15px;line-height:1.3}
+.item-txt span{display:block;font-size:13px;color:var(--texto-suave);line-height:1.4}
+.item-seta{color:var(--oro-hondo);flex-shrink:0}
+.tag{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--unidad);color:var(--oro-texto);white-space:nowrap}
+.tag.ok{background:#e6f1ea;color:#2f6b4f}
+.tag.breve{background:#f4e9e9;color:var(--vino)}
+
+/* ---------- Botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:14px 22px;border-radius:14px;font-weight:800;font-size:15.5px;color:#fff;background:var(--vino-metal);border:1px solid #e9d3a199;box-shadow:inset 0 1px #ffffff2e,0 14px 30px -12px #7a1f2b99;width:100%;text-align:center}
+.btn:active{transform:translateY(1px)}
+.btn.sec{background:var(--blanco);color:var(--vino);border:1.5px solid var(--borde);box-shadow:var(--sombra)}
+.btn.ouro{background:var(--oro-etiqueta);color:var(--vino-hover);border-color:#9c7a3c80}
+.btn[aria-disabled="true"]{opacity:.55}
+.btns{display:grid;gap:10px}
+
+/* ---------- Coleção ---------- */
+.colecoes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.colecao{background:var(--blanco);border:1px solid var(--borde);border-radius:18px;overflow:hidden;box-shadow:var(--sombra);text-align:left;display:flex;flex-direction:column}
+.colecao-img{position:relative;aspect-ratio:1/1;background:var(--oro-claro)}
+.colecao-img img{width:100%;height:100%;object-fit:cover}
+.colecao-corpo{padding:10px 12px 12px}
+.colecao-corpo b{font-family:var(--serif);font-size:15px;line-height:1.2;display:block}
+.colecao-corpo span{font-size:12px;color:var(--gris);font-style:italic}
+.check-canto{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:#2f6b4f;color:#fff;display:grid;place-items:center;box-shadow:0 4px 10px #0005}
+.fav-canto{position:absolute;bottom:8px;right:8px;width:32px;height:32px;border-radius:50%;background:#fffffff0;color:var(--vino);display:grid;place-items:center;box-shadow:0 4px 10px #0003}
+.hero-img{border-radius:22px;overflow:hidden;aspect-ratio:1/1;box-shadow:var(--sombra-alta);background:var(--oro-claro);border:5px solid #fff}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.miniaturas{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 8px;margin:0 -2px}
+.miniaturas::-webkit-scrollbar{display:none}
+.miniaturas img{width:96px;height:96px;border-radius:14px;object-fit:cover;flex-shrink:0;border:3px solid #fff;box-shadow:var(--sombra)}
+.alternar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border-radius:16px;background:var(--blanco);border:1px solid var(--borde)}
+.alternar b{font-size:14.5px}
+.chave{width:52px;height:30px;border-radius:999px;background:#d8d0c4;position:relative;flex-shrink:0;transition:background .2s}
+.chave::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 6px #0003;transition:transform .2s}
+.chave[aria-checked="true"]{background:#2f6b4f}
+.chave[aria-checked="true"]::after{transform:translateX(22px)}
+
+/* ---------- Índice visual ---------- */
+.filtros{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px;margin:0 -18px;padding-left:18px;padding-right:18px}
+.filtros::-webkit-scrollbar{display:none}
+.filtro{white-space:nowrap;padding:9px 14px;border-radius:999px;border:1.5px solid var(--borde);background:var(--unidad);font-size:13px;font-weight:700;color:var(--texto-suave)}
+.filtro[aria-pressed="true"]{background:var(--vino);border-color:var(--vino);color:#fff}
+.grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.grade a{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;border:3px solid #fff;box-shadow:var(--sombra);background:var(--oro-claro)}
+.grade img{width:100%;height:100%;object-fit:cover}
+.grade span{position:absolute;left:0;right:0;bottom:0;font-size:10.5px;font-weight:800;color:#fff;padding:14px 6px 5px;background:linear-gradient(transparent,#000a);text-align:left;line-height:1.2}
+
+/* ---------- Método / Calendário ---------- */
+.passo{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:16px;align-items:start}
+.passo-foto{position:relative;width:64px;height:64px}
+.passo-foto img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid var(--oro-claro)}
+.passo-num{position:absolute;right:-4px;bottom:-4px;width:26px;height:26px;border-radius:50%;background:linear-gradient(150deg,#f3dca4,#c9a45c);color:#3b2b0e;font-family:var(--serif);font-weight:800;font-size:13px;display:grid;place-items:center;border:2px solid #fff}
+.passo h3{font-size:17px;margin-bottom:4px}
+.passo h3 span{color:var(--vino);letter-spacing:.05em}
+.passo p{font-size:14px;color:var(--texto-suave)}
+.passo .acoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.mini-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;font-size:12.5px;font-weight:800;border:1.5px solid var(--borde);background:var(--unidad);color:var(--vino)}
+.mini-btn.feito{background:#e6f1ea;border-color:#bcd8c6;color:#2f6b4f}
+
+.mes{padding:16px}
+.mes-cab{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.mes-ponto{width:14px;height:14px;border-radius:50%;background:var(--oro);box-shadow:0 0 0 4px #b8914a33;flex-shrink:0}
+.mes.agora .mes-ponto{background:var(--vino);box-shadow:0 0 0 4px #7a1f2b33}
+.mes-cab small{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-texto);display:block}
+.mes.agora .mes-cab small{color:var(--vino)}
+.mes-cab b{font-family:var(--serif);font-size:18px}
+.tarefa{display:flex;gap:11px;align-items:flex-start;padding:10px 4px;border-top:1px dashed var(--borde);width:100%;text-align:left}
+.tarefa:first-of-type{border-top:0}
+.caixa{width:24px;height:24px;border-radius:8px;border:2px solid var(--oro-claro);flex-shrink:0;display:grid;place-items:center;color:transparent;transition:.2s;margin-top:1px}
+.tarefa[aria-checked="true"] .caixa{background:#2f6b4f;border-color:#2f6b4f;color:#fff}
+.tarefa[aria-checked="true"] .tarefa-txt{color:var(--gris);text-decoration:line-through;text-decoration-color:#2f6b4f88}
+.tarefa-txt{font-size:14.5px;font-weight:600;line-height:1.4}
+
+/* ---------- Bônus ---------- */
+.bono{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px;align-items:center;text-align:left;width:100%}
+.bono-img{border-radius:14px;overflow:hidden;aspect-ratio:25/18;background:var(--oro-claro)}
+.bono-img img{width:100%;height:100%;object-fit:cover}
+.bono small{font-size:10.5px;font-weight:800;letter-spacing:.12em;color:var(--vino);text-transform:uppercase}
+.bono b{display:block;font-family:var(--serif);font-size:16.5px;line-height:1.2;margin:2px 0 4px}
+.bono span{font-size:13px;color:var(--texto-suave);line-height:1.4;display:block}
+.capa-bono{border-radius:20px;overflow:hidden;box-shadow:var(--sombra-alta);aspect-ratio:25/18;background:var(--oro-claro);border:4px solid #fff}
+.capa-bono img{width:100%;height:100%;object-fit:cover}
+
+.busca{display:flex;align-items:center;gap:10px;padding:0 14px;border-radius:14px;background:var(--blanco);border:1.5px solid var(--borde);min-height:50px}
+.busca input{flex:1;border:0;outline:0;background:none;font:inherit;font-size:16px;color:var(--texto);min-width:0}
+.tabela-abrev{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px}
+.tabela-abrev th{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--vino-metal);padding:10px 8px;text-align:left}
+.tabela-abrev th:first-child{border-top-left-radius:14px}.tabela-abrev th:last-child{border-top-right-radius:14px}
+.tabela-abrev td{padding:10px 8px;border-bottom:1px solid var(--borde);vertical-align:top;background:#fff}
+.tabela-abrev td:first-child{font-weight:700}
+.tabela-abrev code{font-family:var(--sans);font-weight:800;color:var(--vino);background:var(--unidad);padding:1px 6px;border-radius:6px;white-space:nowrap}
+.tabela-abrev tr:last-child td:first-child{border-bottom-left-radius:14px}.tabela-abrev tr:last-child td:last-child{border-bottom-right-radius:14px}
+
+.paleta{padding:14px}
+.paleta-cores{display:flex;height:64px;border-radius:12px;overflow:hidden;margin-bottom:10px}
+.paleta-cores button{flex:1;position:relative}
+.paleta-cores button span{position:absolute;bottom:4px;left:0;right:0;font-size:9.5px;font-weight:800;text-align:center;opacity:0;transition:.2s}
+.paleta-cores button:hover span,.paleta-cores button:focus span{opacity:1}
+.paleta b{font-family:var(--serif);font-size:16px}
+.paleta p{font-size:13px;color:var(--texto-suave)}
+.dica{display:flex;gap:12px;padding:14px;align-items:flex-start}
+.dica-num{font-family:var(--serif);font-style:italic;font-weight:800;color:var(--oro-hondo);font-size:22px;line-height:1;min-width:24px}
+.dica b{display:block;font-size:15px;margin-bottom:2px}
+.dica span{font-size:13.5px;color:var(--texto-suave)}
+
+.calc{padding:18px;display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}.calc>*,.campos2>*{min-width:0}
+.campo{display:grid;gap:6px}
+.campo label{font-size:13px;font-weight:800;color:var(--texto)}
+.campo label span{font-weight:600;color:var(--gris)}
+.entrada{display:flex;align-items:center;border:1.5px solid var(--borde);border-radius:12px;background:var(--crema);min-height:50px;padding:0 12px;gap:8px}
+.entrada:focus-within{border-color:var(--oro)}
+.entrada i{font-style:normal;font-weight:800;color:var(--oro-texto);font-size:14px}
+.entrada input{flex:1;width:100%;border:0;outline:0;background:none;font:inherit;font-size:17px;font-weight:700;color:var(--texto);min-width:0;text-align:right}
+.campos2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.resultado{border-radius:18px;padding:18px;background:var(--vino-metal);color:#fff;text-align:center;box-shadow:0 18px 40px -16px #7a1f2bcc}
+.resultado small{font-size:11px;font-weight:800;letter-spacing:.16em;color:#f3dca4}
+.resultado .valor{font-family:var(--serif);font-size:44px;font-weight:900;line-height:1.05;margin:4px 0}
+.resultado .valor sup{font-size:.4em;vertical-align:.95em;margin-right:2px}
+.resultado p{font-size:13px;color:#fff9}
+.decomp{display:grid;gap:6px;font-size:14px;padding:4px 2px}
+.decomp div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--borde);padding:6px 0}
+.decomp div b{font-variant-numeric:tabular-nums}
+
+.msg{padding:14px;display:grid;gap:10px}
+.msg-txt{white-space:pre-wrap;font-size:14px;line-height:1.5;background:#e7f3df;border-radius:12px 12px 12px 4px;padding:12px;color:#1f2a1c;position:relative}
+.msg-cab{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.msg-cab b{font-size:14.5px}
+
+/* ---------- Vídeo ---------- */
+.aula-num{font-family:var(--serif);font-weight:800;font-size:15px;color:var(--vino)}
+.player{position:fixed;inset:0;z-index:90;background:#0b120ef2;display:grid;place-items:center;padding:20px}
+.player[hidden]{display:none}
+.player-caixa{width:min(100%,760px)}
+.player-frame{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 30px 70px -20px #000}
+.player-frame iframe,.player-frame video{width:100%;height:100%;border:0;display:block}
+.player-cab{display:flex;justify-content:space-between;align-items:center;color:#fff;margin-bottom:12px;gap:12px}
+.player-cab b{font-family:var(--serif);font-size:18px}
+.fechar{width:42px;height:42px;border-radius:50%;background:#ffffff1f;color:#fff;display:grid;place-items:center;flex-shrink:0}
+
+/* ---------- Navegação inferior ---------- */
+.nav{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(100%,560px);z-index:50;background:#fffffff2;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--borde);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 6px calc(6px + var(--safe-b));box-shadow:0 -10px 30px -18px #2b242266}
+.nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:54px;border-radius:14px;font-size:11px;font-weight:800;color:var(--gris)}
+.nav a[aria-current="page"]{color:var(--vino);background:var(--unidad)}
+.nav a svg{width:22px;height:22px}
+
+/* ---------- Entrada ---------- */
+.entrada-tela{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;overflow-y:auto;
+  background:radial-gradient(60% 42% at 50% 42%,#f0c8781f,transparent 70%),linear-gradient(180deg,#1d3a2c,#0f2118)}
+.entrada-tela[hidden]{display:none}
+.entrada-caixa{width:min(100%,420px);text-align:center;color:var(--crema);position:relative;z-index:2}
+.entrada-capa{width:180px;margin:0 auto 22px;border-radius:20px;overflow:hidden;border:4px solid transparent;background:var(--oro-metal) border-box;box-shadow:0 30px 60px -20px #000,0 0 60px -10px #e7bf6299}
+.entrada-capa img{border-radius:16px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.entrada-caixa h1{font-size:30px;color:#fffaf1;margin-bottom:8px}
+.entrada-caixa h1 em{color:#f3dca4}
+.entrada-caixa p{color:#fbf7f0cc;font-size:15px;margin-bottom:22px}
+.entrada-caixa .entrada{background:#ffffff14;border-color:#d9c39a66;margin-bottom:12px}
+.entrada-caixa .entrada input{color:#fff;text-align:left;font-weight:600}
+.entrada-caixa .entrada input::placeholder{color:#fbf7f099}
+.entrada-pular{margin-top:12px;font-size:13.5px;font-weight:700;color:#d9c39a;text-decoration:underline;text-underline-offset:4px;min-height:40px}
+
+/* ---------- Diversos ---------- */
+.aviso{padding:14px;border-radius:16px;background:#fff8e8;border:1px solid #ecd9a8;font-size:13.5px;color:var(--texto-suave);display:flex;gap:10px}
+.aviso svg{color:var(--oro-hondo);flex-shrink:0;margin-top:2px}
+.instalar{display:flex;gap:12px;align-items:center;padding:14px;border-radius:16px;background:var(--bosque);color:var(--crema)}
+.instalar b{display:block;font-size:14.5px}
+.instalar span{font-size:12.5px;color:#fbf7f0bb}
+.instalar button.x{color:#fbf7f0aa;padding:6px}
+.toast{position:fixed;left:50%;bottom:calc(var(--nav) + var(--safe-b) + 14px);transform:translate(-50%,20px);opacity:0;z-index:95;background:var(--texto);color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:700;box-shadow:0 14px 30px -10px #000;transition:.3s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.rodape{text-align:center;font-size:12px;color:var(--gris);padding:28px 18px 8px}
+.rodape a{color:var(--vino);font-weight:800}
+.tela{animation:entra .35s ease both}
+@keyframes entra{from{opacity:0;transform:translateY(8px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <main id="tela" aria-live="polite"></main>
+</div>
+
+<nav class="nav" aria-label="Navegação principal">
+  <a href="#/inicio" data-nav="inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Início</a>
+  <a href="#/colecao" data-nav="colecao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Coleção</a>
+  <a href="#/aulas" data-nav="aulas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.2 3.5a.5.5 0 0 0 .8-.4V7.9a.5.5 0 0 0-.8-.4L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>Aulas</a>
+  <a href="#/calendario" data-nav="calendario"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Calendário</a>
+  <a href="#/bonus" data-nav="bonus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>Bônus</a>
+</nav>
+
+<div class="entrada-tela" id="entrada" hidden>
+  <canvas class="neve" aria-hidden="true"></canvas>
+  <div class="entrada-caixa">
+    <div class="entrada-capa"><img src="../imagens/hero-vitrine-natal.webp" alt=""></div>
+    <span class="ceja">EDIÇÃO NATAL 2026</span>
+    <h1>Bem-vinda à sua <em>coleção</em>.</h1>
+    <p>Suas +800 receitas de amigurumi de Natal, os bônus e o calendário da temporada — tudo num só lugar.</p>
+    <form id="form-entrada">
+      <div class="entrada"><input id="nome" name="nome" autocomplete="given-name" placeholder="Como você quer ser chamada?" maxlength="30" aria-label="Seu nome"></div>
+      <button class="btn" type="submit">Entrar na minha coleção <span aria-hidden="true">→</span></button>
+    </form>
+    <button class="entrada-pular" type="button" id="pular">Entrar sem informar o nome</button>
+  </div>
+</div>
+
+<div class="player" id="player" hidden role="dialog" aria-modal="true" aria-labelledby="player-titulo">
+  <div class="player-caixa">
+    <div class="player-cab"><b id="player-titulo"></b><button class="fechar" id="player-fechar" aria-label="Fechar vídeo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="player-frame" id="player-frame"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* =====================================================================
+   CONFIGURAÇÃO — edite só esta parte.
+   Cole os links dos seus arquivos (Google Drive, Dropbox, Hotmart, etc.)
+   Link vazio ('') = aparece como "Em breve" para a aluna.
+   ===================================================================== */
+const CONFIG = {
+  produto: 'Amigurumis Natalinos de Luxo',
+  suporteWhatsApp: '',            // ex.: '5511999999999' (só números, com DDI 55)
+  suporteEmail: 'seuemail@seudominio.com',
+
+  // PDFs de cada coleção de receitas de amigurumi
+  colecoes: {
+    'papai-noel':      [{ titulo: 'Receitas — Papai Noel e Mamãe Noel (PDF)', url: '' }],
+    'renas-duendes':   [{ titulo: 'Receitas — Renas e Duendes (PDF)', url: '' }],
+    'bonecos-neve':    [{ titulo: 'Receitas — Bonecos de Neve (PDF)', url: '' }],
+    'doce-natal':      [{ titulo: 'Receitas — Doce Natal (PDF)', url: '' }],
+    'amigos-inverno':  [{ titulo: 'Receitas — Amigos do Inverno (PDF)', url: '' }],
+    'enfeites-arvore': [{ titulo: 'Receitas — Enfeites para a Árvore (PDF)', url: '' }],
+    'mini-presentes':  [{ titulo: 'Receitas — Mini Presentes (PDF)', url: '' }],
+    'pecas-estrela':   [{ titulo: 'Receitas — Peças Estrela (PDF)', url: '' }],
+  },
+  indiceVisualPdf: '',             // PDF do Índice Visual completo
+  metodoPdf: '',                   // Guia do Método Vitrine de Natal™
+  bau: [                           // Baú de Natal — receitas extras
+    { titulo: 'Baú de Natal — Parte 1 (PDF)', url: '' },
+    { titulo: 'Baú de Natal — Parte 2 (PDF)', url: '' },
+  ],
+  bonusPdf: {                      // versões em PDF dos bônus (opcional)
+    codigo: '', acabamento: '', calculadora: '', venda: ''
+  },
+  // Videoaulas: link do YouTube, Vimeo ou arquivo .mp4
+  aulas: [
+    { titulo: 'Anel mágico', desc: 'O começo de quase todo amigurumi, sem buraquinho no centro.', url: '' },
+    { titulo: 'Ponto baixo em espiral', desc: 'A base de todas as peças, carreira por carreira.', url: '' },
+    { titulo: 'Aumento e diminuição invisível', desc: 'Para dar forma redonda e acabamento liso.', url: '' },
+    { titulo: 'Troca de cor sem degrau', desc: 'Listras de Papai Noel e gorrinhos perfeitos.', url: '' },
+    { titulo: 'Bordado do rosto', desc: 'Olhos, sobrancelhas, bochechas e sorriso.', url: '' },
+    { titulo: 'Montagem e costura', desc: 'Unir cabeça, corpo e braços com firmeza.', url: '' },
+    { titulo: 'Acabamento e arremate', desc: 'Esconder fios e deixar a peça com cara de loja.', url: '' },
+  ],
+};
+/* ===================================================================== */
+
+const IMG = n => `../imagens/${n}.webp`;
+const COLECOES = [
+  { id:'papai-noel', nome:'Papai Noel e Mamãe Noel', img:'colecao-papai-noel', tag:'Ideal para presentear', det:'', fotos:['galeria-papai-noel','modelo-01','modelo-04'] },
+  { id:'renas-duendes', nome:'Renas e Duendes', img:'colecao-renas-duendes', det:'', fotos:['modelo-basico-04'] },
+  { id:'bonecos-neve', nome:'Bonecos de Neve', img:'colecao-bonecos-neve', det:'', fotos:[] },
+  { id:'doce-natal', nome:'Doce Natal', img:'colecao-doce-natal', det:'bonecos e casinhas de gengibre, bengalinhas — em crochê', fotos:['modelo-basico-06'] },
+  { id:'amigos-inverno', nome:'Amigos do Inverno', img:'colecao-amigos-inverno', det:'pinguins, ursos, bichinhos', fotos:['modelo-05','modelo-12'] },
+  { id:'enfeites-arvore', nome:'Enfeites para a Árvore', img:'colecao-enfeites-arvore', det:'', fotos:['modelo-16','modelo-06','modelo-09'] },
+  { id:'mini-presentes', nome:'Mini Presentes', img:'colecao-mini-presentes', det:'detalhes pequenos, chaveiros', fotos:['galeria-mini-presentes'] },
+  { id:'pecas-estrela', nome:'Peças Estrela', img:'colecao-pecas-estrela', tag:'Brilha na vitrine', det:'personagens grandes, centros de mesa', fotos:['galeria-pecas-estrela'] },
+];
+const METODO = [
+  { id:'m1', verbo:'ESCOLHA', resto:'a sua coleção', img:'passo-escolha', txt:'Percorra o Índice Visual e escolha seus modelos em minutos. Sem se perder no Pinterest.', ir:'#/indice', irTxt:'Abrir Índice Visual' },
+  { id:'m2', verbo:'CROCHETE', resto:'suas peças', img:'passo-crochete', txt:'Receitas de crochê claras, passo a passo e em português. Se uma abreviação te travar, o Código Amigurumi™ traduz.', ir:'#/bonus/codigo', irTxt:'Código Amigurumi™' },
+  { id:'m3', verbo:'ELEVE', resto:'o acabamento', img:'passo-eleve', txt:'Paletas e detalhes que deixam suas peças com cara de loja, não de feito em casa.', ir:'#/bonus/acabamento', irTxt:'Acabamento Boutique' },
+  { id:'m4', verbo:'EXIBA', resto:'a sua coleção', img:'passo-exiba', txt:'Presenteie, decore a sua casa ou fotografe com o celular e ofereça.', ir:'#/bonus/venda', irTxt:'Venda sua Coleção' },
+];
+const CALENDARIO = [
+  { id:'agora', mes:'AGORA', verbo:'Decida', tarefas:[
+    ['c1','Escolher de 6 a 10 modelos para a sua vitrine no Índice Visual'],
+    ['c2','Separar linhas, enchimento, olhos de segurança e agulha'],
+    ['c3','Definir o destino de cada peça: presentear, decorar ou vender'] ]},
+  { id:'out', mes:'OUTUBRO', verbo:'Crochete e eleve', tarefas:[
+    ['c4','Crochetar as peças principais da coleção'],
+    ['c5','Aplicar o Acabamento Boutique: olhos, bordados, laços e toques dourados'],
+    ['c6','Fotografar cada peça assim que ficar pronta'] ]},
+  { id:'nov', mes:'NOVEMBRO', verbo:'Exiba', tarefas:[
+    ['c7','Calcular o preço de cada peça na Calculadora de Preço Justo'],
+    ['c8','Publicar as fotos no status, Instagram e grupos'],
+    ['c9','Responder os pedidos com as mensagens prontas'] ]},
+  { id:'dez', mes:'DEZEMBRO', verbo:'Entregue e aproveite', tarefas:[
+    ['c10','Embalar com etiqueta kraft e laço de veludo'],
+    ['c11','Entregar as encomendas com antecedência'],
+    ['c12','Decorar a sua casa e presentear quem você ama'] ]},
+];
+const BONUS = [
+  { id:'codigo', n:1, nome:'Código Amigurumi™', img:'bonus-codigo-amigurumi', etq:'Trava numa abreviação? Nunca mais.', desc:'O guia de abreviações de diferentes países: pb, mp, sc, dc… Leia qualquer receita sem travar no meio da carreira.' },
+  { id:'acabamento', n:2, nome:'Acabamento Boutique + Paletas Natalinas de Luxo', img:'bonus-acabamento-boutique', etq:'Para pararem de dizer só “que lindo”.', desc:'Combinações de cores e detalhes de acabamento que deixam suas peças com cara de caras.' },
+  { id:'calculadora', n:3, nome:'Calculadora de Preço Justo', img:'bonus-calculadora', etq:'Para não dar seu trabalho de graça.', desc:'Anote materiais e tempo e tenha um preço que cobre o que você investiu.' },
+  { id:'venda', n:4, nome:'Guia Venda sua Coleção + Calendário', img:'bonus-venda-sua-colecao', etq:'Para suas peças não ficarem na caixa.', desc:'Fotos com o celular, como publicar, mensagens prontas para o WhatsApp e o que fazer em cada mês.' },
+];
+const ABREV = [
+  ['Anel mágico','am','AM','MR'],['Corrente','corr','cad','ch'],['Ponto baixíssimo','pbx','pd / pr','sl st'],
+  ['Ponto baixo','pb','pb / mp','sc'],['Ponto meio alto','pma','pma','hdc'],['Ponto alto','pa','pa / v','dc'],
+  ['Ponto alto duplo','pad','pad','tr'],['Aumento (2 pontos no mesmo)','aum','aum','inc'],['Diminuição','dim','dism','dec'],
+  ['Diminuição invisível','dim inv','dism inv','inv dec'],['Carreira / volta','carr','v / vta','rnd / R'],
+  ['Laçada','lç','laz','yo'],['Só na alça da frente','af','hd','FLO'],['Só na alça de trás','at','ht','BLO'],
+  ['Arremate','arr','rem','FO'],['Repetir','rep','rep','rep'],['Marcador de ponto','mp','marc','SM'],
+  ['Ponto pipoca','ppc','pop','pc'],['Picô','picô','piquito','picot'],['Total de pontos ao fim da carreira','(18)','(18)','(18)'],
+];
+const PALETAS = [
+  { nome:'Vermelho Clássico', usar:'Papai Noel, Mamãe Noel e guirlandas', cores:['#9A2C3D','#F3E9D8','#1F3D2E','#C9A04F'] },
+  { nome:'Neve Nórdica', usar:'Bonecos de neve e amigos do inverno', cores:['#FFFFFF','#D9E3EA','#8FA9BC','#B3263A'] },
+  { nome:'Dourado de Luxo', usar:'Peças Estrela e centros de mesa', cores:['#B8914A','#F3DFAE','#7A1F2B','#2B2422'] },
+  { nome:'Floresta Encantada', usar:'Duendes, árvores e enfeites', cores:['#1F3D2E','#3F7D5C','#E7BF62','#F6F2EC'] },
+  { nome:'Doce Gengibre', usar:'Bonecos e casinhas de gengibre em crochê', cores:['#A0673A','#F5E6D3','#C8102E','#FFFFFF'] },
+  { nome:'Rosa Vintage', usar:'Anjos, bailarinas e presentes delicados', cores:['#E8B4B8','#F7E7E3','#8C2F39','#D9C39A'] },
+];
+const ACABAMENTO = [
+  ['Olhos na mesma carreira','Posicione os olhos de segurança na mesma carreira, com a mesma distância do centro, antes de fechar a peça.'],
+  ['Bochechas rosadas','Um toque de blush ou sombra rosa aplicado com cotonete dá vida ao rosto na hora.'],
+  ['Sobrancelhas bordadas','Dois pontos retos com linha clara acima dos olhos mudam a expressão inteira.'],
+  ['Laço de veludo','Troque o laço de linha por fita de veludo ou cetim: a peça muda de categoria.'],
+  ['Toque dourado','Linha metálica em detalhes pequenos (estrela, guizo, botões) traz o efeito de luxo.'],
+  ['Fios escondidos','Arremate passando o fio por dentro da peça em várias direções antes de cortar.'],
+  ['Etiqueta kraft','Uma etiqueta com o nome da peça e a sua marca transforma o amigurumi em presente.'],
+];
+const FOTOS = [
+  ['Luz da janela','Fotografe de dia, perto de uma janela, sem flash. Luz natural é o que mais valoriza o crochê.'],
+  ['Fundo simples','Um tecido claro, uma tábua de madeira ou uma manta. O amigurumi tem que ser o destaque.'],
+  ['Na altura dos olhos','Abaixe o celular até a altura do rosto da peça: ela ganha personalidade.'],
+  ['Um detalhe natalino','Uma pinha, um galhinho ou luzinhas desfocadas ao fundo contam a história.'],
+  ['Foto de escala','Mostre a peça na mão ou ao lado de uma xícara para a cliente entender o tamanho.'],
+];
+const MENSAGENS = [
+  ['Divulgação no status', '🎄 Encomendas de Natal abertas!\n\nAmigurumis feitos à mão, um por um, com linha de algodão e acabamento de luxo. Perfeitos para presentear ou decorar.\n\nAs vagas vão até o dia [DATA]. Me chama aqui que eu te mando as opções! ✨'],
+  ['Resposta para “quanto custa?”', 'Oi, [NOME]! 😊 O [PEÇA] sai por R$ [VALOR].\n\nEle é feito à mão, ponto por ponto, com linha de algodão e acabamento caprichado. Consigo entregar até [DATA].\n\nQuer que eu reserve o seu?'],
+  ['Confirmação do pedido', 'Perfeito, [NOME]! Reservado ✨\n\nPara confirmar, o pagamento é via Pix:\n[CHAVE PIX]\n\nAssim que cair, eu já começo o seu e te mando foto do andamento. 🧶'],
+  ['Entrega e agradecimento', 'Seu [PEÇA] ficou pronto! 🎁\n\nFoi feito com muito carinho. Se puder, me manda uma foto dele no lugarzinho dele, eu amo ver! E se gostar, me indica para uma amiga? 💛'],
+];
+
+/* ---------- Estado (fica salvo no próprio celular) ---------- */
+const CHAVE = 'amigurumi-natal-app-v1';
+let E = { nome:'', entrou:false, feitos:{}, favs:{}, comecei:{}, calc:{}, instalarFechado:false };
+try { E = Object.assign(E, JSON.parse(localStorage.getItem(CHAVE) || '{}')); } catch(_) {}
+const salvar = () => { try { localStorage.setItem(CHAVE, JSON.stringify(E)); } catch(_) {} };
+
+/* ---------- Utilidades ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ic = {
+  seta:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>',
+  voltar:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>',
+  pdf:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M9 15h6M9 18h4"/></svg>',
+  play:'<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>',
+  check:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+  coracao:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>',
+  coracaoCheio:'<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg>',
+  estrela:'<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l1.9 6.6 6.6 1.9-6.6 1.9-1.9 6.6-1.9-6.6-6.6-1.9 6.6-1.9z"/></svg>',
+  copiar:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="13" height="13" x="9" y="9" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+  info:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>',
+  baixar:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>',
+  lupa:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+  wpp:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>',
+};
+function toast(t){ const el=$('#toast'); el.textContent=t; el.classList.add('on'); clearTimeout(toast.t); toast.t=setTimeout(()=>el.classList.remove('on'),2200); }
+const focos = n => '<span class="foco"></span>'.repeat(n);
+const nevado = '<svg class="nevado" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 52C90 34 170 30 260 42s170 30 270 22 190-40 300-38 190 34 300 36 200-26 310-28V90H0Z" fill="#fff" fill-opacity=".5"/><path d="M0 64c110-18 210-20 320-8s200 26 320 18 210-34 330-32 200 26 280 28 150-10 190-14V90H0Z" fill="#fbf7f0"/></svg>';
+function topo({titulo, sub='', voltar=null, compacto=false}){
+  return `<header class="topo${compacto?' compacto':''}"><canvas class="neve" aria-hidden="true"></canvas><div class="guirlanda" aria-hidden="true">${focos(12)}</div>
+  <div class="topo-in"><div class="topo-linha">${voltar?`<a class="voltar" href="${voltar}">${ic.voltar}Voltar</a>`:`<span class="marca"><span class="marca-selo">${ic.estrela}</span>MINHA COLEÇÃO</span>`}
+  <span class="marca" style="font-size:11px;opacity:.85">NATAL 2026</span></div>
+  <h1>${titulo}</h1>${sub?`<p class="sub">${sub}</p>`:''}</div>${nevado}</header>`;
+}
+function linkArquivo(a, icon=ic.pdf){
+  const ok = !!a.url;
+  return `<${ok?'a':'button'} class="item" ${ok?`href="${esc(a.url)}" target="_blank" rel="noopener"`:'type="button" data-breve'}>
+    <span class="item-ico">${icon}</span><span class="item-txt"><b>${esc(a.titulo)}</b><span>${ok?'Toque para abrir ou baixar':'O link será liberado aqui'}</span></span>
+    ${ok?`<span class="item-seta">${ic.baixar}</span>`:'<span class="tag breve">Em breve</span>'}</${ok?'a':'button'}>`;
+}
+function diasAteNatal(){ const h=new Date(); let n=new Date(h.getFullYear(),11,25); if(h>n) n=new Date(h.getFullYear()+1,11,25); return Math.ceil((n-new Date(h.getFullYear(),h.getMonth(),h.getDate()))/864e5); }
+function totalTarefas(){ return CALENDARIO.reduce((a,m)=>a+m.tarefas.length,0)+METODO.length; }
+function feitasTarefas(){ return Object.values(E.feitos).filter(Boolean).length; }
+function proximaTarefa(){
+  for(const p of METODO) if(!E.feitos[p.id]) return {txt:`${p.verbo[0]+p.verbo.slice(1).toLowerCase()} ${p.resto}`, link:'#/metodo', rot:'Próximo passo do método'};
+  for(const m of CALENDARIO) for(const [id,t] of m.tarefas) if(!E.feitos[id]) return {txt:t, link:'#/calendario', rot:`Calendário · ${m.mes}`};
+  return {txt:'Você completou tudo! Agora é aproveitar o Natal. 🎄', link:'#/colecao', rot:'Parabéns'};
+}
+
+/* ---------- Telas ---------- */
+const TELAS = {
+  inicio(){
+    const pct = Math.round(feitasTarefas()/totalTarefas()*100), prox = proximaTarefa(), nome = E.nome?`, ${esc(E.nome)}`:'';
+    const instalar = (!E.instalarFechado && !matchMedia('(display-mode: standalone)').matches && !navigator.standalone) ? `
+      <div class="instalar secao"><span class="marca-selo" style="flex-shrink:0">${ic.estrela}</span><div style="flex:1"><b>Deixe na tela inicial do celular</b>
+      <span>${/iphone|ipad/i.test(navigator.userAgent)?'No Safari, toque em Compartilhar → “Adicionar à Tela de Início”.':'No navegador, toque em ⋮ → “Adicionar à tela inicial”.'}</span></div>
+      <button class="x" data-fechar-instalar aria-label="Fechar">✕</button></div>`:'';
+    return topo({titulo:`Olá${nome}! Sua <em>coleção</em> está pronta.`, sub:'Receitas de amigurumi, bônus e calendário — tudo organizado para você chegar em dezembro com a mesa cheia de amigurumis.'})+`
+    <div class="conteudo">
+      <div class="card card-ouro boasvindas">
+        <div class="progresso-linha"><div class="anel" style="--p:${pct}"><b>${pct}%</b></div>
+          <div class="progresso-txt"><b>Sua temporada</b><span>${feitasTarefas()} de ${totalTarefas()} etapas concluídas</span></div></div>
+        <a class="proximo" href="${prox.link}"><span class="proximo-ico">${ic.seta}</span><span><small>${prox.rot}</small><span>${esc(prox.txt)}</span></span></a>
+        <div class="contagem">🎄 Faltam <b>${diasAteNatal()}</b> dias para o Natal</div>
+      </div>
+      ${instalar}
+      <section class="secao"><div class="secao-cab"><h2>Comece por aqui</h2></div>
+        <div class="atalhos">
+          <a class="atalho largo" href="#/colecao"><img src="${IMG('mockup-produto-completo')}" alt=""><span class="pilula vinho">+800 receitas</span><b>A Coleção Natalina de Luxo</b><small>8 coleções de receitas de amigurumi</small></a>
+          <a class="atalho" href="#/indice"><img src="${IMG('mockup-indice-visual')}" alt=""><b>Índice Visual</b><small>Escolha em minutos</small></a>
+          <a class="atalho" href="#/metodo"><img src="${IMG('passo-exiba')}" alt=""><b>Método Vitrine de Natal™</b><small>4 passos</small></a>
+          <a class="atalho" href="#/aulas"><img src="${IMG('aba-paixao')}" alt=""><b>Videoaulas</b><small>Técnica amigurumi</small></a>
+          <a class="atalho" href="#/bau"><img src="${IMG('colecao-pecas-estrela')}" alt=""><b>Baú de Natal</b><small>Modelos extras</small></a>
+        </div></section>
+      <section class="secao"><div class="secao-cab"><h2>Seus 4 bônus</h2><a href="#/bonus">Ver todos</a></div>
+        <div class="lista">${BONUS.map(b=>`<a class="item" href="#/bonus/${b.id}"><span class="item-ico"><img src="${IMG(b.img)}" alt=""></span><span class="item-txt"><b>${b.nome}</b><span>Bônus ${b.n}</span></span><span class="item-seta">${ic.seta}</span></a>`).join('')}</div></section>
+      ${suporte()}
+    </div>`;
+  },
+  colecao(){
+    return topo({titulo:'A <em>Coleção</em> Natalina de Luxo', sub:'Mais de 800 receitas de amigurumi de Natal, passo a passo e em português, organizadas em 8 coleções.'})+`
+    <div class="conteudo">
+      <div class="aviso">${ic.info}<span>São receitas de <b>crochê</b>: o passo a passo, carreira por carreira, para crochetar cada amigurumi. Toque numa coleção para abrir os PDFs.</span></div>
+      <section class="secao"><div class="colecoes">${COLECOES.map(c=>`
+        <a class="colecao" href="#/colecao/${c.id}"><span class="colecao-img"><img src="${IMG(c.img)}" alt="Coleção ${c.nome}" loading="lazy">
+          ${c.tag?`<span class="pilula ${c.id==='pecas-estrela'?'vinho':''}">${c.tag}</span>`:''}
+          ${E.comecei[c.id]?`<span class="check-canto">${ic.check}</span>`:''}
+          ${E.favs[c.id]?`<span class="fav-canto">${ic.coracaoCheio}</span>`:''}</span>
+          <span class="colecao-corpo"><b>${c.nome}</b>${c.det?`<span>${c.det}</span>`:''}</span></a>`).join('')}</div></section>
+      <section class="secao"><a class="btn sec" href="#/indice">Abrir o Índice Visual ${ic.seta}</a></section>
+      ${suporte()}
+    </div>`;
+  },
+  colecaoItem(id){
+    const c = COLECOES.find(x=>x.id===id); if(!c) return TELAS.colecao();
+    const arqs = CONFIG.colecoes[id] || [];
+    const fotos = [c.img, ...c.fotos];
+    return topo({titulo:c.nome, sub:c.det?`(${c.det})`:'Receitas de amigurumi desta coleção', voltar:'#/colecao', compacto:true})+`
+    <div class="conteudo">
+      <div class="hero-img"><img src="${IMG(c.img)}" alt="Coleção ${c.nome}"></div>
+      ${fotos.length>1?`<section class="secao"><div class="secao-cab"><h2>Alguns modelos</h2></div><div class="miniaturas">${fotos.map(f=>`<img src="${IMG(f)}" alt="" loading="lazy">`).join('')}</div></section>`:''}
+      <section class="secao"><div class="secao-cab"><h2>Receitas em PDF</h2></div><div class="lista">${arqs.map(a=>linkArquivo(a)).join('') || linkArquivo({titulo:'Receitas desta coleção (PDF)',url:''})}</div></section>
+      <section class="secao lista">
+        <div class="alternar"><b>Já comecei esta coleção</b><button class="chave" role="switch" aria-checked="${!!E.comecei[id]}" data-comecei="${id}" aria-label="Já comecei esta coleção"></button></div>
+        <div class="alternar"><b>Favorita da minha vitrine</b><button class="chave" role="switch" aria-checked="${!!E.favs[id]}" data-fav="${id}" aria-label="Favorita"></button></div>
+      </section>
+      <section class="secao btns"><a class="btn ouro" href="#/bonus/acabamento">Ver paletas para esta coleção</a><a class="btn sec" href="#/bonus/codigo">Travou numa abreviação? Código Amigurumi™</a></section>
+    </div>`;
+  },
+  indice(){
+    const filtro = TELAS._filtro || 'todas';
+    const itens = [];
+    COLECOES.forEach(c=>[c.img,...c.fotos].forEach(f=>itens.push({f,c})));
+    const vis = itens.filter(i=>filtro==='todas'||i.c.id===filtro);
+    return topo({titulo:'Índice <em>Visual</em>', sub:'Todos os modelos à vista. Toque numa foto para abrir a coleção.', voltar:'#/inicio', compacto:true})+`
+    <div class="conteudo">
+      <div class="card" style="padding:12px"><div class="filtros" role="group" aria-label="Filtrar por coleção" style="margin:0;padding:0 0 4px">
+        <button class="filtro" data-filtro="todas" aria-pressed="${filtro==='todas'}">Todas</button>
+        ${COLECOES.map(c=>`<button class="filtro" data-filtro="${c.id}" aria-pressed="${filtro===c.id}">${c.nome}</button>`).join('')}</div>
+      <div class="grade">${vis.map(i=>`<a href="#/colecao/${i.c.id}"><img src="${IMG(i.f)}" alt="${i.c.nome}" loading="lazy"><span>${i.c.nome}</span></a>`).join('')}</div></div>
+      <section class="secao"><div class="lista">${linkArquivo({titulo:'Índice Visual completo (PDF)', url:CONFIG.indiceVisualPdf})}</div></section>
+    </div>`;
+  },
+  metodo(){
+    return topo({titulo:'Método <em>Vitrine de Natal</em>™', sub:'A ordem de quem enche a mesa de amigurumis, em 4 passos. Marque cada passo quando concluir.', voltar:'#/inicio', compacto:true})+`
+    <div class="conteudo"><div class="lista">${METODO.map((p,i)=>`
+      <article class="card passo"><div class="passo-foto"><img src="${IMG(p.img)}" alt=""><span class="passo-num">${i+1}</span></div>
+      <div><h3><span>${p.verbo}</span> ${p.resto}</h3><p>${p.txt}</p>
+      <div class="acoes"><a class="mini-btn" href="${p.ir}">${p.irTxt} ${ic.seta}</a>
+      <button class="mini-btn ${E.feitos[p.id]?'feito':''}" data-feito="${p.id}" aria-pressed="${!!E.feitos[p.id]}">${E.feitos[p.id]?ic.check+' Concluído':'Marcar como feito'}</button></div></div></article>`).join('')}</div>
+      <section class="secao lista">${linkArquivo({titulo:'Guia do Método Vitrine de Natal™ (PDF)', url:CONFIG.metodoPdf})}</section>
+      <section class="secao"><a class="btn" href="#/calendario">Ver o calendário da temporada ${ic.seta}</a></section>
+    </div>`;
+  },
+  calendario(){
+    return topo({titulo:'Calendário da <em>Temporada</em>', sub:`O que fazer em cada mês até o Natal. Faltam ${diasAteNatal()} dias.`, compacto:true})+`
+    <div class="conteudo"><div class="lista">${CALENDARIO.map((m,i)=>`
+      <article class="card mes ${i===0?'agora':''}"><div class="mes-cab"><span class="mes-ponto"></span><div><small>${m.mes}</small><b>${m.verbo}</b></div></div>
+      ${m.tarefas.map(([id,t])=>`<button class="tarefa" role="checkbox" aria-checked="${!!E.feitos[id]}" data-feito="${id}"><span class="caixa">${ic.check}</span><span class="tarefa-txt">${t}</span></button>`).join('')}</article>`).join('')}</div>
+      <p class="rodape">Cada crocheteira avança no seu ritmo. O que você conquistar depende do seu trabalho e de como decidir oferecer suas peças.</p>
+    </div>`;
+  },
+  aulas(){
+    return topo({titulo:'Videoaulas de <em>técnica</em>', sub:'Para revisar qualquer técnica de amigurumi quando precisar.', compacto:true})+`
+    <div class="conteudo"><div class="lista">${CONFIG.aulas.map((a,i)=>`
+      <button class="item" data-aula="${i}"><span class="item-ico" style="background:${a.url?'var(--vino-metal)':'var(--unidad)'};color:${a.url?'#fff':'var(--oro-hondo)'}">${a.url?ic.play:`<span class="aula-num">${i+1}</span>`}</span>
+      <span class="item-txt"><b>${i+1}. ${a.titulo}</b><span>${a.desc}</span></span>${a.url?`<span class="item-seta">${ic.seta}</span>`:'<span class="tag breve">Em breve</span>'}</button>`).join('')}</div>
+      ${suporte()}</div>`;
+  },
+  bau(){
+    return topo({titulo:'Baú de <em>Natal</em>', sub:'Receitas de amigurumi extras para esta e as próximas temporadas.', voltar:'#/inicio', compacto:true})+`
+    <div class="conteudo"><div class="hero-img" style="aspect-ratio:16/10"><img src="${IMG('mockup-oferta')}" alt=""></div>
+      <section class="secao"><div class="lista">${CONFIG.bau.map(a=>linkArquivo(a)).join('')}</div></section></div>`;
+  },
+  bonus(){
+    return topo({titulo:'Seus <em>4 bônus</em>', sub:'Ferramentas para crochetar, dar acabamento, precificar e vender a sua coleção.', compacto:true})+`
+    <div class="conteudo"><div class="lista">${BONUS.map(b=>`
+      <a class="card bono" href="#/bonus/${b.id}"><span class="bono-img"><img src="${IMG(b.img)}" alt="" loading="lazy"></span>
+      <span><small>Bônus ${b.n}</small><b>${b.nome}</b><span>${b.desc}</span></span></a>`).join('')}</div>${suporte()}</div>`;
+  },
+  bonusItem(id){
+    const b = BONUS.find(x=>x.id===id); if(!b) return TELAS.bonus();
+    const corpo = { codigo:bonusCodigo, acabamento:bonusAcabamento, calculadora:bonusCalc, venda:bonusVenda }[id]();
+    return topo({titulo:b.nome.replace('™','<span style="font-size:.6em;vertical-align:.7em">™</span>'), sub:b.etq, voltar:'#/bonus', compacto:true})+`
+    <div class="conteudo"><div class="capa-bono"><img src="${IMG(b.img)}" alt="${b.nome}"></div>
+    <p style="margin:16px 2px 0;color:var(--texto-suave)">${b.desc}</p>${corpo}
+    <section class="secao lista">${linkArquivo({titulo:`${b.nome} — versão em PDF`, url:CONFIG.bonusPdf[id]})}</section></div>`;
+  },
+};
+function bonusCodigo(){
+  return `<section class="secao"><div class="busca">${ic.lupa}<input id="busca-abrev" type="search" placeholder="Procure: aumento, sc, mp, FLO…" aria-label="Procurar abreviação"></div></section>
+  <section class="secao" style="margin-top:12px"><table class="tabela-abrev"><thead><tr><th>Ponto</th><th>PT</th><th>ES</th><th>EN</th></tr></thead>
+  <tbody id="abrev">${ABREV.map(r=>`<tr data-busca="${esc(r.join(' ').toLowerCase())}"><td>${r[0]}</td><td><code>${r[1]}</code></td><td><code>${r[2]}</code></td><td><code>${r[3]}</code></td></tr>`).join('')}</tbody></table>
+  <p class="rodape" style="padding-top:12px">As abreviações podem variar um pouco entre autoras. Na dúvida, confira a legenda no início de cada receita.</p></section>`;
+}
+function bonusAcabamento(){
+  return `<section class="secao"><div class="secao-cab"><h2>Paletas Natalinas de Luxo</h2></div><div class="lista">${PALETAS.map(p=>`
+    <div class="card paleta"><div class="paleta-cores">${p.cores.map(c=>`<button style="background:${c};color:${['#FFFFFF','#F3E9D8','#D9E3EA','#F3DFAE','#F6F2EC','#F5E6D3','#F7E7E3','#E8B4B8','#D9C39A','#E7BF62'].includes(c)?'#2b2422':'#fff'}" data-copiar="${c}" aria-label="Copiar a cor ${c}"><span>${c}</span></button>`).join('')}</div>
+    <b>${p.nome}</b><p>Para: ${p.usar}</p></div>`).join('')}</div></section>
+  <section class="secao"><div class="secao-cab"><h2>Detalhes que valorizam</h2></div><div class="lista">${ACABAMENTO.map(([t,d],i)=>`
+    <div class="card dica"><span class="dica-num">${i+1}</span><div><b>${t}</b><span>${d}</span></div></div>`).join('')}</div></section>`;
+}
+function bonusCalc(){
+  const v = Object.assign({mat:'',emb:'',horas:'',hora:'',margem:'30'}, E.calc);
+  const campo = (id,label,pre,ph,extra='') => `<div class="campo"><label for="c-${id}">${label}</label><div class="entrada"><i>${pre}</i><input id="c-${id}" data-calc="${id}" inputmode="decimal" placeholder="${ph}" value="${esc(v[id])}" ${extra}></div></div>`;
+  return `<section class="secao"><div class="card calc">
+    ${campo('mat','Materiais <span>(linha, enchimento, olhos)</span>','R$','0,00')}
+    ${campo('emb','Embalagem <span>(caixa, laço, etiqueta)</span>','R$','0,00')}
+    <div class="campos2">${campo('horas','Horas de trabalho','h','0')}${campo('hora','Valor da sua hora','R$','0,00')}</div>
+    ${campo('margem','Lucro desejado','%','30')}
+    <div class="resultado"><small>PREÇO SUGERIDO</small><div class="valor" id="c-preco"><sup>R$</sup>0,00</div><p id="c-arred"></p></div>
+    <div class="decomp" id="c-decomp"></div>
+  </div></section>`;
+}
+function bonusVenda(){
+  return `<section class="secao"><div class="secao-cab"><h2>Fotos com o celular</h2></div><div class="lista">${FOTOS.map(([t,d],i)=>`<div class="card dica"><span class="dica-num">${i+1}</span><div><b>${t}</b><span>${d}</span></div></div>`).join('')}</div></section>
+  <section class="secao"><div class="secao-cab"><h2>Mensagens prontas</h2></div><div class="lista">${MENSAGENS.map(([t,m],i)=>`
+    <div class="card msg"><div class="msg-cab"><b>${t}</b><button class="mini-btn" data-copiar-msg="${i}">${ic.copiar} Copiar</button></div><div class="msg-txt">${esc(m)}</div></div>`).join('')}</div>
+    <p class="rodape" style="padding-top:12px">Troque o que está entre [COLCHETES] antes de enviar.</p></section>
+  <section class="secao"><a class="btn" href="#/calendario">Abrir o Calendário da Temporada ${ic.seta}</a></section>`;
+}
+function suporte(){
+  const w = CONFIG.suporteWhatsApp ? `https://wa.me/${CONFIG.suporteWhatsApp}?text=${encodeURIComponent('Olá! Comprei a coleção '+CONFIG.produto+' e preciso de ajuda.')}` : '';
+  return `<p class="rodape">Precisa de ajuda? ${w?`<a href="${w}" target="_blank" rel="noopener">Fale com o suporte no WhatsApp</a>`:`<a href="mailto:${CONFIG.suporteEmail}">${CONFIG.suporteEmail}</a>`}<br>© 2026 ${CONFIG.produto}</p>`;
+}
+
+/* ---------- Calculadora ---------- */
+const num = s => { s=String(s||'').replace(/\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.'); const n=parseFloat(s); return isFinite(n)&&n>0?n:0; };
+const brl = n => n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+function calcular(){
+  const g = id => num(E.calc[id] ?? (id==='margem'?'30':''));
+  const mat=g('mat'), emb=g('emb'), h=g('horas'), vh=g('hora'), m=g('margem');
+  const mao=h*vh, custo=mat+emb+mao, preco=custo*(1+m/100);
+  const el=$('#c-preco'); if(!el) return;
+  el.innerHTML=`<sup>R$</sup>${brl(preco)}`;
+  const arred = preco>0 ? Math.ceil(preco)-0.10 : 0;
+  $('#c-arred').textContent = preco>0 ? `Arredondando para vender: R$ ${brl(arred<preco?arred+1:arred)}` : 'Preencha os campos acima';
+  $('#c-decomp').innerHTML = `<div><span>Materiais + embalagem</span><b>R$ ${brl(mat+emb)}</b></div><div><span>Seu trabalho (${String(h).replace('.',',')} h × R$ ${brl(vh)})</span><b>R$ ${brl(mao)}</b></div><div><span>Lucro (${String(m).replace('.',',')}%)</span><b>R$ ${brl(preco-custo)}</b></div>`;
+}
+
+/* ---------- Roteador ---------- */
+function rota(){
+  const h = (location.hash||'#/inicio').slice(2).split('/');
+  let html, nav=h[0]||'inicio';
+  if(h[0]==='colecao' && h[1]) html=TELAS.colecaoItem(h[1]);
+  else if(h[0]==='bonus' && h[1]) html=TELAS.bonusItem(h[1]);
+  else html=(TELAS[h[0]]||TELAS.inicio)();
+  if(['indice','metodo','bau'].includes(nav)) nav='inicio';
+  if(!TELAS[h[0]] && !(h[0]==='colecao'||h[0]==='bonus')) nav='inicio';
+  const t=$('#tela'); t.innerHTML=`<div class="tela">${html}</div>`;
+  document.querySelectorAll('.nav a').forEach(a=>a.setAttribute('aria-current', a.dataset.nav===nav?'page':'false'));
+  window.scrollTo(0,0);
+  t.querySelectorAll('canvas.neve').forEach(neve);
+  if(h[0]==='bonus'&&h[1]==='calculadora') calcular();
+  const tituloTela = t.querySelector('h1'); document.title = (tituloTela?tituloTela.textContent+' — ':'')+'Minha Coleção';
+}
+window.addEventListener('hashchange', rota);
+
+/* ---------- Interações ---------- */
+document.addEventListener('click', e=>{
+  const q = s => e.target.closest(s);
+  let el;
+  if(el=q('[data-breve]')){ toast('Este conteúdo será liberado em breve aqui no app ✨'); return; }
+  if(el=q('[data-feito]')){ const id=el.dataset.feito; E.feitos[id]=!E.feitos[id]; salvar(); if(E.feitos[id]) toast('Concluído! 🎉'); const y=scrollY; rota(); scrollTo(0,y); return; }
+  if(el=q('[data-comecei]')){ const id=el.dataset.comecei; E.comecei[id]=!E.comecei[id]; salvar(); el.setAttribute('aria-checked',E.comecei[id]); return; }
+  if(el=q('[data-fav]')){ const id=el.dataset.fav; E.favs[id]=!E.favs[id]; salvar(); el.setAttribute('aria-checked',E.favs[id]); if(E.favs[id]) toast('Adicionada às favoritas 💛'); return; }
+  if(el=q('[data-filtro]')){ TELAS._filtro=el.dataset.filtro; rota(); return; }
+  if(el=q('[data-fechar-instalar]')){ E.instalarFechado=true; salvar(); el.closest('.instalar').remove(); return; }
+  if(el=q('[data-copiar]')){ copiar(el.dataset.copiar, `Cor ${el.dataset.copiar} copiada`); return; }
+  if(el=q('[data-copiar-msg]')){ copiar(MENSAGENS[+el.dataset.copiarMsg][1], 'Mensagem copiada! Cole no WhatsApp'); return; }
+  if(el=q('[data-aula]')){ abrirAula(CONFIG.aulas[+el.dataset.aula]); return; }
+});
+document.addEventListener('input', e=>{
+  if(e.target.dataset.calc){ E.calc[e.target.dataset.calc]=e.target.value; salvar(); calcular(); }
+  if(e.target.id==='busca-abrev'){ const v=e.target.value.trim().toLowerCase(); document.querySelectorAll('#abrev tr').forEach(tr=>tr.hidden = v && !tr.dataset.busca.includes(v)); }
+});
+function copiar(t,msg){
+  const ok=()=>toast(msg);
+  if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok,()=>fallback());
+  else fallback();
+  function fallback(){ const a=document.createElement('textarea'); a.value=t; document.body.appendChild(a); a.select(); try{document.execCommand('copy'); ok();}catch(_){} a.remove(); }
+}
+function abrirAula(a){
+  if(!a.url){ toast('Esta aula será liberada em breve ✨'); return; }
+  let src=a.url, frame;
+  const yt=src.match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/), vm=src.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if(yt) frame=`<iframe src="https://www.youtube.com/embed/${yt[1]}?autoplay=1&rel=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+  else if(vm) frame=`<iframe src="https://player.vimeo.com/video/${vm[1]}?autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+  else if(/\.(mp4|webm)(\?|$)/i.test(src)) frame=`<video src="${esc(src)}" controls autoplay playsinline></video>`;
+  else { window.open(src,'_blank','noopener'); return; }
+  $('#player-titulo').textContent=a.titulo; $('#player-frame').innerHTML=frame; $('#player').hidden=false; $('#player-fechar').focus();
+}
+function fecharAula(){ $('#player').hidden=true; $('#player-frame').innerHTML=''; }
+$('#player-fechar').addEventListener('click', fecharAula);
+$('#player').addEventListener('click', e=>{ if(e.target.id==='player') fecharAula(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !$('#player').hidden) fecharAula(); });
+
+/* ---------- Neve ---------- */
+const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function neve(cv){
+  if(reduz||cv._on) return; cv._on=true;
+  const ctx=cv.getContext('2d'), dpr=Math.min(devicePixelRatio||1,2); let W,H,fl=[];
+  const tam=()=>{const r=cv.getBoundingClientRect(); W=r.width; H=r.height; cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);};
+  tam(); addEventListener('resize',tam);
+  for(let i=0;i<Math.min(60,W/9);i++) fl.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2+.6,v:Math.random()*.45+.2,d:Math.random()*6,o:Math.random()*.5+.3});
+  (function loop(){ if(!cv.isConnected) return; ctx.clearRect(0,0,W,H);
+    fl.forEach(f=>{f.y+=f.v; f.d+=.012; f.x+=Math.sin(f.d)*.3; if(f.y>H+3){f.y=-3;f.x=Math.random()*W;}
+      ctx.beginPath(); ctx.arc(f.x,f.y,f.r,0,7); ctx.fillStyle=`rgba(255,255,255,${f.o})`; ctx.fill();});
+    requestAnimationFrame(loop); })();
+}
+
+/* ---------- Entrada (sem senha) ---------- */
+function entrar(nome){ E.nome=(nome||'').trim().slice(0,30); E.entrou=true; salvar(); $('#entrada').hidden=true; rota(); }
+$('#form-entrada').addEventListener('submit', e=>{ e.preventDefault(); entrar($('#nome').value); });
+$('#pular').addEventListener('click', ()=>entrar(''));
+if(!E.entrou){ $('#entrada').hidden=false; neve($('#entrada canvas')); }
+rota();
+if('serviceWorker' in navigator && location.protocol==='https:') navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>

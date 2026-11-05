@@ -5,7 +5,8 @@ Página de vendas estática, em português, pronta para hospedar (GitHub Pages, 
 ## Estrutura
 
 ```
-index.html      → a página (HTML + CSS + JS num único arquivo)
+index.html      → a página de vendas (HTML + CSS + JS num único arquivo)
+app/            → o mini app de entregáveis (área da aluna, sem login)
 imagens/        → todas as imagens usadas na página (.webp)
 fonte/          → arquivos-fonte usados para gerar o index.html
 ```
@@ -25,3 +26,21 @@ No `index.html` (ou em `fonte/` e depois gere de novo):
 ```bash
 python3 fonte/build.py
 ```
+
+## Mini app de entregáveis (`app/`)
+
+É o link que a cliente recebe depois da compra (ex.: `seudominio.com/app/`).
+Não tem senha: na primeira visita ela digita o nome (ou pula) e já entra.
+O progresso dela (passos do método, calendário, coleções favoritas, calculadora) fica salvo no próprio celular.
+
+**Para liberar os arquivos**, abra `app/index.html` e edite só o bloco `CONFIG` no começo do script:
+
+- `colecoes` → link do PDF de cada uma das 8 coleções de receitas
+- `indiceVisualPdf`, `metodoPdf`, `bau`, `bonusPdf` → links dos demais PDFs
+- `aulas` → link de cada videoaula (YouTube, Vimeo ou .mp4)
+- `suporteWhatsApp` / `suporteEmail` → contato de suporte
+
+Link vazio aparece para a aluna como **"Em breve"**.
+Os bônus Código Amigurumi™, Paletas, Calculadora de Preço Justo e Mensagens prontas já funcionam dentro do app.
+
+Coloque o link do app na página de obrigado e no e-mail de acesso da sua plataforma de pagamento.

@@ -1,0 +1,15 @@
+{
+  "name": "Minha Coleção — Amigurumis Natalinos de Luxo",
+  "short_name": "Minha Coleção",
+  "description": "Receitas de amigurumi de Natal, bônus e calendário da temporada.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1f3d2e",
+  "theme_color": "#1f3d2e",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
