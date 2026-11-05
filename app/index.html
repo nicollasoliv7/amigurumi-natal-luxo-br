@@ -75,7 +75,7 @@ canvas.neve{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-e
 .secao{margin-top:26px}
 .secao-cab{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px}
 .secao-cab h2{font-size:21px}
-.secao-cab a,.secao-cab button{font-size:13px;font-weight:800;color:var(--vino)}
+.secao-cab a,.secao-cab button{font-size:13px;font-weight:800;color:var(--vino);white-space:nowrap}
 .ceja{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--vino);
   background:linear-gradient(180deg,#fffcf4,#f6ead0) padding-box,var(--oro-metal) border-box;border:1px solid transparent;border-radius:999px;padding:5px 12px;margin-bottom:10px}
 
@@ -313,6 +313,34 @@ canvas.neve{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-e
 .exemplo:last-child{border:0}
 .exemplo code{font-family:var(--sans);font-weight:800;color:var(--vino);font-size:14.5px}
 .exemplo span{font-size:13.5px;color:var(--texto-suave)}
+/* extras */
+.vitrine{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;margin:0 -18px;padding:4px 18px 10px;scroll-snap-type:x mandatory}
+.vitrine::-webkit-scrollbar{display:none}
+.extra{flex:0 0 72%;max-width:260px;scroll-snap-align:start;background:var(--blanco);border:1px solid var(--borde);border-radius:20px;overflow:hidden;box-shadow:var(--sombra);display:flex;flex-direction:column;text-align:left}
+.extra-img{position:relative;aspect-ratio:1/1;background:var(--bosque)}
+.extra-img img{width:100%;height:100%;object-fit:cover}
+.extra.bloq .extra-img img{filter:saturate(.85) brightness(.8)}
+.extra-cad{position:absolute;inset:0;display:grid;place-items:center}
+.extra-cad span{width:58px;height:58px;border-radius:50%;background:#0f2118cc;border:2px solid #d9c39a;color:#f3dca4;display:grid;place-items:center;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.extra-cad span svg{width:24px;height:24px}
+.extra-corpo{padding:12px 14px 14px;display:grid;gap:6px}
+.extra-corpo b{font-family:var(--serif);font-size:16px;line-height:1.2}
+.extra-preco{display:flex;align-items:baseline;gap:8px;font-weight:800}
+.extra-preco s{color:var(--gris);font-size:12.5px;font-weight:700}
+.extra-preco strong{color:#2f6b4f;font-size:18px}
+.extra-cta{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;border-radius:12px;font-size:13.5px;font-weight:800;background:var(--vino-metal);color:#fff}
+.extra.lib .extra-cta{background:#e6f1ea;color:#2f6b4f}
+.lista-extras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lista-extras .extra{max-width:none}
+.oferta-box{border-radius:20px;padding:18px;background:linear-gradient(180deg,#fffdf8,#fbf4e6) padding-box,var(--oro-metal) border-box;border:2px solid transparent;box-shadow:var(--sombra-alta);display:grid;gap:12px;text-align:center}
+.oferta-box .de{color:var(--gris);text-decoration:line-through;text-decoration-color:var(--vino);font-weight:700}
+.oferta-box .por{font-family:var(--serif);font-weight:900;font-size:52px;line-height:1;color:var(--texto)}
+.oferta-box .por sup{font-size:.4em;vertical-align:.95em}
+.off{display:inline-block;background:var(--vino-metal);color:#fff;font-weight:800;font-size:12px;padding:4px 10px;border-radius:999px}
+.codigo-form{display:flex;gap:8px}
+.codigo-form input{flex:1;min-width:0;min-height:50px;border:1.5px solid var(--borde);border-radius:12px;background:#fff;padding:0 14px;font:inherit;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.codigo-form button{min-height:50px;padding:0 16px;border-radius:12px;background:var(--bosque);color:#fff;font-weight:800;font-size:14px}
+.selo-lib{display:inline-flex;align-items:center;gap:6px;background:#e6f1ea;color:#2f6b4f;font-weight:800;font-size:13px;padding:6px 12px;border-radius:999px}
 .rodape{text-align:center;font-size:12px;color:var(--gris);padding:28px 18px 8px}
 .rodape a{color:var(--vino);font-weight:800}
 .tela{animation:entra .35s ease both}
@@ -405,10 +433,47 @@ const CONFIG = {
     { titulo: 'Montagem e costura', desc: 'Unir cabeça, corpo e braços com firmeza.', url: '' },
     { titulo: 'Acabamento e arremate', desc: 'Esconder fios e deixar a peça com cara de loja.', url: '' },
   ],
+
+  /* ------------------------------------------------------------------
+     PRODUTOS EXTRAS (order bumps e upsell) — aparecem BLOQUEADOS no app.
+     checkout: link de compra avulsa do produto (Kiwify, Hotmart, etc.)
+     codigo:   código de liberação que você envia no e-mail de compra
+     Liberação automática: link do app com ?libera=espirais,gnomos
+       (ou ?libera=tudo). Ex.: seudominio.com/app/?libera=gnomos
+     ------------------------------------------------------------------ */
+  extras: {
+    espirais:   { checkout: '', codigo: 'ESPIRAL27', arquivos: [{ titulo: 'Receitas — Espirais Natalinas (PDF)', url: '' }] },
+    gnomos:     { checkout: '', codigo: 'GNOMOS27',  arquivos: [{ titulo: 'Receitas — 24 Gnomos Natalinos (PDF)', url: '' }] },
+    presepio:   { checkout: '', codigo: 'PRESEPIO19', arquivos: [{ titulo: 'Receitas — Presépio & Anjinhos (PDF)', url: '' }] },
+    etiquetas:  { checkout: '', codigo: 'ETIQUETAS17', arquivos: [{ titulo: 'Etiquetas & Embalagens Natalinas (PDF para imprimir)', url: 'pdfs/extras/etiquetas-embalagens-natalinas.pdf' }] },
+    anointeiro: { checkout: '', codigo: 'ANOINTEIRO', arquivos: [{ titulo: 'Amigurumis o Ano Inteiro — 12 coleções (PDF)', url: '' }] },
+  },
 };
 /* ===================================================================== */
 
 const IMG = n => `../imagens/${n}.webp`;
+const EXTRAS = [
+  { id:'espirais', tipo:'Oferta especial', nome:'Espirais Natalinas Penduráveis', capa:'extras/espirais.webp', preco:'R$27', de:'R$104,69', off:'-74%',
+    gancho:'Peças rápidas que vendem em packs para a árvore',
+    desc:'Enfeites de amigurumi em espiral para pendurar na árvore: Papai Noel, bonecos de neve, pinguim, arvorezinhas, anjos, gnomo e mais. Rápidos de crochetar, vendem muito bem em packs e ficam lindos pendurados juntos.',
+    itens:['Receitas de crochê de espirais natalinas, passo a passo','Personagens: Papai Noel, bonecos de neve, pinguim, árvores, anjos e gnomo','Peças pequenas, que aproveitam sobras de linha','Ideais para vender em kits de 3, 5 ou 10 unidades'] },
+  { id:'gnomos', tipo:'Oferta especial', nome:'24 Gnomos Natalinos', capa:'extras/gnomos.webp', preco:'R$27', de:'R$82,65', off:'-67%',
+    gancho:'Os queridinhos do Natal, rápidos de crochetar e perfeitos para presentear em set',
+    desc:'24 modelos de gnomos natalinos em crochê, com gorro comprido e barba fofinha. São peças pequenas e rápidas, que aproveitam sobras de linha e ficam lindas em grupo: na mesa, pendurados na árvore ou em kits de presente.',
+    itens:['24 receitas de gnomos natalinos, passo a passo','Gorros, barbas e roupinhas em vários estilos','Peças pequenas: ótimas para kits e lembrancinhas','Combinam com todas as coleções da sua vitrine'] },
+  { id:'presepio', tipo:'Novo', nome:'Presépio & Anjinhos de Crochê', capa:'extras/presepio.webp', preco:'R$19', de:'R$64,00', off:'-70%',
+    gancho:'O centro da mesa de Natal, feito por você',
+    desc:'Receitas de amigurumi para montar o presépio completo: Sagrada Família, Reis Magos, pastor, animais da manjedoura e anjinhos. Uma peça de muito valor afetivo, que as famílias guardam por anos e encomendam com antecedência.',
+    itens:['Sagrada Família: Maria, José e o Menino Jesus','Três Reis Magos, pastor e ovelhinhas','Anjinhos para a árvore e para o presépio','Sugestão de montagem do presépio completo'] },
+  { id:'etiquetas', tipo:'Novo', nome:'Etiquetas & Embalagens Natalinas', capa:'extras/etiquetas.webp', preco:'R$17', de:'R$49,90', off:'-66%',
+    gancho:'Entregue seus amigurumis com acabamento de loja',
+    desc:'Tags, cartões e adesivos natalinos para imprimir em casa. É o detalhe que transforma o seu amigurumi em presente — e faz a cliente lembrar do seu nome.',
+    itens:['12 tags natalinas para pendurar (4 estilos)','Tags “Para / De” e tags de cuidados com a peça','Cartão de agradecimento para a cliente','20 adesivos redondos para fechar saquinhos e caixas'] },
+  { id:'anointeiro', tipo:'Oferta única', nome:'Amigurumis o Ano Inteiro', capa:'extras/anointeiro.webp', preco:'R$47', de:'R$197,00', off:'-76%',
+    gancho:'Continue vendendo depois do Natal: uma coleção para cada data do ano',
+    desc:'O Natal é só o começo. Com as coleções do ano inteiro, você chega a cada data comemorativa com a vitrine pronta: Páscoa, Dia das Mães, festa junina, Dia dos Pais, Dia das Crianças e mais. Receitas de amigurumi passo a passo, no mesmo formato da coleção de Natal.',
+    itens:['12 coleções sazonais de receitas de amigurumi','Páscoa, Dia das Mães, junina, Dia dos Pais, chá de bebê, Dia das Crianças e mais','Calendário anual: o que crochetar e quando começar cada data','Mesmo padrão: passo a passo e em português'] },
+];
 const COLECOES = [
   { id:'papai-noel', nome:'Papai Noel e Mamãe Noel', img:'colecao-papai-noel', tag:'Ideal para presentear', det:'', fotos:['galeria-papai-noel','modelo-01','modelo-04'] },
   { id:'renas-duendes', nome:'Renas e Duendes', img:'colecao-renas-duendes', det:'', fotos:['modelo-basico-04'] },
@@ -511,8 +576,9 @@ const MENSAGENS = [
 
 /* ---------- Estado (fica salvo no próprio celular) ---------- */
 const CHAVE = 'amigurumi-natal-app-v1';
-let E = { nome:'', entrou:false, feitos:{}, favs:{}, comecei:{}, calc:{}, instalarFechado:false, contadores:[{id:'c1',nome:'Meu projeto',carr:0,pts:''}], contAtivo:'c1', soFavs:false };
+let E = { nome:'', entrou:false, feitos:{}, favs:{}, comecei:{}, calc:{}, instalarFechado:false, contadores:[{id:'c1',nome:'Meu projeto',carr:0,pts:''}], contAtivo:'c1', soFavs:false, liberados:{} };
 try { E = Object.assign(E, JSON.parse(localStorage.getItem(CHAVE) || '{}')); } catch(_) {}
+if(!E.liberados) E.liberados={};
 if(!Array.isArray(E.contadores)||!E.contadores.length) E.contadores=[{id:'c1',nome:'Meu projeto',carr:0,pts:''}];
 const salvar = () => { try { localStorage.setItem(CHAVE, JSON.stringify(E)); } catch(_) {} };
 
@@ -534,6 +600,8 @@ const ic = {
   lupa:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
   engrenagem:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>',
   contador:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 12h3M9.5 10.5v3M14 12h3"/></svg>',
+  cadeado:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+  aberto:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>',
   wpp:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>',
 };
 function toast(t){ const el=$('#toast'); el.textContent=t; el.classList.add('on'); clearTimeout(toast.t); toast.t=setTimeout(()=>el.classList.remove('on'),2200); }
@@ -560,6 +628,36 @@ function proximaTarefa(){
   for(const m of CALENDARIO) for(const [id,t] of m.tarefas) if(!E.feitos[id]) return {txt:t, link:'#/calendario', rot:`Calendário · ${m.mes}`};
   return {txt:'Você completou tudo! Agora é aproveitar o Natal. 🎄', link:'#/colecao', rot:'Parabéns'};
 }
+
+/* ---------- Extras ---------- */
+const liberado = id => !!E.liberados[id];
+function cardExtra(x){
+  const lib = liberado(x.id);
+  return `<a class="extra ${lib?'lib':'bloq'}" href="#/extra/${x.id}"><span class="extra-img"><img src="${x.capa}" alt="${x.nome}" loading="lazy">
+    ${lib?'':`<span class="extra-cad"><span>${ic.cadeado}</span></span>`}<span class="pilula ${lib?'':'vinho'}">${lib?'Liberado':x.tipo}</span></span>
+    <span class="extra-corpo"><b>${x.nome}</b>${lib?'':`<span class="extra-preco"><s>${x.de}</s><strong>${x.preco}</strong></span>`}
+    <span class="extra-cta">${lib?ic.check+' Acessar':ic.cadeado+' Desbloquear'}</span></span></a>`;
+}
+function vitrineExtras(titulo='Conteúdos para desbloquear'){
+  const bloq = EXTRAS.filter(x=>!liberado(x.id)), lib = EXTRAS.filter(x=>liberado(x.id));
+  if(!EXTRAS.length) return '';
+  return `<section class="secao"><div class="secao-cab"><h2>${bloq.length?titulo:'Seus extras'}</h2><a href="#/extras">Ver todos</a></div>
+    <div class="vitrine">${[...bloq,...lib].map(cardExtra).join('')}</div></section>`;
+}
+function liberar(ids, silencioso){
+  const novos = ids.filter(id=>EXTRAS.some(x=>x.id===id) && !E.liberados[id]);
+  novos.forEach(id=>E.liberados[id]=true); salvar();
+  if(novos.length && !silencioso) toast(novos.length>1?'Seus conteúdos foram liberados! 🎉':`${EXTRAS.find(x=>x.id===novos[0]).nome} liberado! 🎉`);
+  return novos;
+}
+(function liberarPorLink(){
+  const p = new URLSearchParams(location.search).get('libera');
+  if(!p) return;
+  const ids = p.toLowerCase()==='tudo' ? EXTRAS.map(x=>x.id) : p.toLowerCase().split(/[,\s]+/);
+  const novos = liberar(ids, true);
+  if(novos.length) sessionStorage.setItem('liberou', novos.join(','));
+  history.replaceState(null,'',location.pathname+location.hash);
+})();
 
 /* ---------- Telas ---------- */
 const TELAS = {
@@ -590,6 +688,7 @@ const TELAS = {
         </div></section>
       <section class="secao"><div class="secao-cab"><h2>Seus 4 bônus</h2><a href="#/bonus">Ver todos</a></div>
         <div class="lista">${BONUS.map(b=>`<a class="item" href="#/bonus/${b.id}"><span class="item-ico"><img src="${IMG(b.img)}" alt=""></span><span class="item-txt"><b>${b.nome}</b><span>Bônus ${b.n}</span></span><span class="item-seta">${ic.seta}</span></a>`).join('')}</div></section>
+      ${vitrineExtras()}
       ${suporte()}
     </div>`;
   },
@@ -606,6 +705,7 @@ const TELAS = {
           ${E.favs[c.id]?`<span class="fav-canto">${ic.coracaoCheio}</span>`:''}</span>
           <span class="colecao-corpo"><b>${c.nome}</b>${c.det?`<span>${c.det}</span>`:''}</span></a>`).join('')}</div></section>
       <section class="secao"><a class="btn sec" href="#/indice">Abrir o Índice Visual ${ic.seta}</a></section>
+      ${vitrineExtras('Complete a sua vitrine')}
       ${suporte()}
     </div>`;
   },
@@ -687,6 +787,39 @@ const TELAS = {
       <section class="secao"><a class="btn sec" href="#/bonus/codigo">Dúvida numa abreviação? Código Amigurumi™ ${ic.seta}</a></section>
     </div>`;
   },
+  extras(){
+    const n = EXTRAS.filter(x=>!liberado(x.id)).length;
+    return topo({titulo:'Desbloqueie <em>mais</em>', sub: n?`Você tem ${n} ${n>1?'conteúdos':'conteúdo'} para desbloquear e completar a sua vitrine de Natal.`:'Você já liberou todos os conteúdos extras. Aproveite!', voltar:'#/inicio', compacto:true})+`
+    <div class="conteudo"><div class="lista-extras">${[...EXTRAS.filter(x=>!liberado(x.id)),...EXTRAS.filter(x=>liberado(x.id))].map(cardExtra).join('')}</div>
+    <section class="secao card calc"><b style="font-family:var(--serif);font-size:17px">Já comprou algum extra?</b>
+      <span style="font-size:13.5px;color:var(--texto-suave)">Digite o código de liberação que chegou no seu e-mail.</span>
+      <form class="codigo-form" data-form-codigo><input name="codigo" placeholder="Seu código" autocomplete="off" aria-label="Código de liberação"><button type="submit">Liberar</button></form></section>
+    ${suporte()}</div>`;
+  },
+  extraItem(id){
+    const x = EXTRAS.find(e=>e.id===id); if(!x) return TELAS.extras();
+    const cfg = (CONFIG.extras||{})[id] || {}, lib = liberado(id);
+    const topoHtml = topo({titulo:x.nome, sub:x.gancho, voltar:'#/extras', compacto:true});
+    if(lib) return topoHtml+`<div class="conteudo"><div class="hero-img"><img src="${x.capa}" alt="${x.nome}"></div>
+      <section class="secao" style="text-align:center"><span class="selo-lib">${ic.check} Conteúdo liberado</span></section>
+      <section class="secao"><div class="secao-cab"><h2>Seus arquivos</h2></div><div class="lista">${(cfg.arquivos||[]).map(a=>linkArquivo(a)).join('')}</div></section>
+      <section class="secao"><div class="card" style="padding:16px"><p style="color:var(--texto-suave)">${x.desc}</p></div></section></div>`;
+    return topoHtml+`<div class="conteudo"><div class="hero-img" style="position:relative"><img src="${x.capa}" alt="${x.nome}"></div>
+      <section class="secao"><div class="card" style="padding:16px"><p style="color:var(--texto-suave)">${x.desc}</p></div></section>
+      <section class="secao"><div class="secao-cab"><h2>O que você recebe</h2></div>
+        <ul class="card" style="list-style:none;margin:0;padding:6px 14px">${x.itens.map(t=>`<li class="tarefa" style="cursor:default"><span class="caixa" style="background:#2f6b4f;border-color:#2f6b4f;color:#fff">${ic.check}</span><span class="tarefa-txt">${t}</span></li>`).join('')}</ul></section>
+      <section class="secao"><div class="oferta-box">
+        <span><span class="off">${x.off}</span></span>
+        <span class="de">De ${x.de}</span>
+        <span class="por"><sup>R$</sup>${x.preco.replace('R$','')}</span>
+        <span style="font-size:13px;color:var(--texto-suave)">Pagamento único · acesso aqui no seu app</span>
+        <a class="btn" href="${cfg.checkout?esc(cfg.checkout):'#'}" ${cfg.checkout?'target="_blank" rel="noopener"':'data-sem-checkout'}>${ic.aberto} Desbloquear por ${x.preco}</a>
+      </div></section>
+      <section class="secao card calc"><b style="font-family:var(--serif);font-size:16px">Já comprei</b>
+        <span style="font-size:13.5px;color:var(--texto-suave)">Digite o código de liberação que chegou no seu e-mail.</span>
+        <form class="codigo-form" data-form-codigo><input name="codigo" placeholder="Seu código" autocomplete="off" aria-label="Código de liberação"><button type="submit">Liberar</button></form></section>
+      ${suporte()}</div>`;
+  },
   ajustes(){
     return topo({titulo:'Ajustes', sub:'Seu nome e o progresso ficam salvos só neste aparelho.', voltar:'#/inicio', compacto:true})+`
     <div class="conteudo"><div class="card calc">
@@ -694,6 +827,7 @@ const TELAS = {
       <button class="btn" data-salvar-nome>Salvar nome</button></div>
       <section class="secao btns">
         ${INSTALAR?'<button class="btn ouro" data-instalar>Instalar na tela inicial</button>':''}
+        <a class="btn sec" href="#/extras">Liberar um conteúdo comprado</a>
         <button class="btn perigo" data-zerar-tudo>Apagar todo o meu progresso</button>
       </section>
       ${suporte()}</div>`;
@@ -707,7 +841,7 @@ const TELAS = {
     return topo({titulo:'Seus <em>4 bônus</em>', sub:'Ferramentas para crochetar, dar acabamento, precificar e vender a sua coleção.', compacto:true})+`
     <div class="conteudo"><div class="lista">${BONUS.map(b=>`
       <a class="card bono" href="#/bonus/${b.id}"><span class="bono-img"><img src="${IMG(b.img)}" alt="" loading="lazy"></span>
-      <span><small>Bônus ${b.n}</small><b>${b.nome}</b><span>${b.desc}</span></span></a>`).join('')}</div>${suporte()}</div>`;
+      <span><small>Bônus ${b.n}</small><b>${b.nome}</b><span>${b.desc}</span></span></a>`).join('')}</div>${vitrineExtras('Mais para a sua coleção')}${suporte()}</div>`;
   },
   bonusItem(id){
     const b = BONUS.find(x=>x.id===id); if(!b) return TELAS.bonus();
@@ -779,9 +913,10 @@ function rota(){
   let html, nav=h[0]||'inicio';
   if(h[0]==='colecao' && h[1]) html=TELAS.colecaoItem(h[1]);
   else if(h[0]==='bonus' && h[1]) html=TELAS.bonusItem(h[1]);
+  else if(h[0]==='extra' && h[1]) html=TELAS.extraItem(h[1]);
   else html=(TELAS[h[0]]||TELAS.inicio)();
-  if(['indice','metodo','bau','contador','ajustes'].includes(nav)) nav='inicio';
-  if(!TELAS[h[0]] && !(h[0]==='colecao'||h[0]==='bonus')) nav='inicio';
+  if(['indice','metodo','bau','contador','ajustes','extras','extra'].includes(nav)) nav='inicio';
+  if(!TELAS[h[0]] && !(h[0]==='colecao'||h[0]==='bonus'||h[0]==='extra')) nav='inicio';
   const t=$('#tela'); t.innerHTML=`<div class="tela">${html}</div>`;
   document.querySelectorAll('.nav a').forEach(a=>a.setAttribute('aria-current', a.dataset.nav===nav?'page':'false'));
   window.scrollTo(0,0);
@@ -806,6 +941,7 @@ document.addEventListener('click', e=>{
   if(el=q('[data-instalar]')){ instalar(); return; }
   if(el=q('[data-salvar-nome]')){ E.nome=$('#aj-nome').value.trim().slice(0,30); salvar(); toast('Nome salvo ✨'); return; }
   if(el=q('[data-zerar-tudo]')){ if(confirm('Apagar todo o progresso, favoritas, contadores e calculadora deste aparelho?')){ try{localStorage.removeItem(CHAVE);}catch(_){} location.hash='#/inicio'; location.reload(); } return; }
+  if(el=q('[data-sem-checkout]')){ e.preventDefault(); toast('O link de compra deste conteúdo ainda não foi configurado'); return; }
   if(el=q('[data-breve]')){ toast('Este conteúdo será liberado em breve aqui no app ✨'); return; }
   if(el=q('[data-feito]')){ const id=el.dataset.feito; E.feitos[id]=!E.feitos[id]; salvar(); if(E.feitos[id]) toast('Concluído! 🎉'); const y=scrollY; rota(); scrollTo(0,y); return; }
   if(el=q('[data-comecei]')){ const id=el.dataset.comecei; E.comecei[id]=!E.comecei[id]; salvar(); el.setAttribute('aria-checked',E.comecei[id]); return; }
@@ -815,6 +951,15 @@ document.addEventListener('click', e=>{
   if(el=q('[data-copiar]')){ copiar(el.dataset.copiar, `Cor ${el.dataset.copiar} copiada`); return; }
   if(el=q('[data-copiar-msg]')){ copiar(MENSAGENS[+el.dataset.copiarMsg][1], 'Mensagem copiada! Cole no WhatsApp'); return; }
   if(el=q('[data-aula]')){ abrirAula(CONFIG.aulas[+el.dataset.aula]); return; }
+});
+document.addEventListener('submit', e=>{
+  if(!e.target.matches('[data-form-codigo]')) return;
+  e.preventDefault();
+  const v = e.target.codigo.value.trim().toUpperCase().replace(/\s+/g,'');
+  if(!v){ toast('Digite o seu código'); return; }
+  const ids = Object.entries(CONFIG.extras||{}).filter(([,c])=>c.codigo && c.codigo.toUpperCase()===v).map(([id])=>id);
+  if(!ids.length){ toast('Código não encontrado. Confira o e-mail da compra.'); return; }
+  liberar(ids); location.hash = '#/extra/'+ids[0]; rota();
 });
 document.addEventListener('input', e=>{
   if(e.target.matches('[data-cont-nome]')){ contAtual().nome=e.target.value; salvar(); }
@@ -890,6 +1035,7 @@ $('#form-entrada').addEventListener('submit', e=>{ e.preventDefault(); entrar($(
 $('#pular').addEventListener('click', ()=>entrar(''));
 if(!E.entrou){ $('#entrada').hidden=false; neve($('#entrada canvas')); }
 rota();
+{ const l=sessionStorage.getItem('liberou'); if(l){ sessionStorage.removeItem('liberou'); const n=l.split(','); setTimeout(()=>toast(n.length>1?'Seus conteúdos extras foram liberados! 🎉':EXTRAS.find(x=>x.id===n[0]).nome+' liberado! 🎉'),600); } }
 if('serviceWorker' in navigator && location.protocol==='https:') navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 </body>

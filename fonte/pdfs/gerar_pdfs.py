@@ -16,7 +16,7 @@ _prep()
 IMG = TMPI.as_uri() + '/'
 FON = (RAIZ / 'app' / 'fontes').as_uri() + '/'
 OUT = RAIZ / 'app' / 'pdfs'
-OUT.mkdir(parents=True, exist_ok=True)
+OUT.mkdir(parents=True, exist_ok=True); (OUT / 'extras').mkdir(exist_ok=True)
 E = html.escape
 
 CSS = f"""
@@ -278,7 +278,43 @@ def pdf_indice():
         *pags,
     ])
 
+
+def pdf_etiquetas():
+    css = """<style>
+    .folha{display:grid;gap:4mm}
+    .tg{position:relative;border:1px dashed #b8a98f;border-radius:3mm;height:62mm;padding-top:11mm !important;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6mm;overflow:hidden}
+    .tg .furo{position:absolute;top:5mm;width:5mm;height:5mm;border-radius:50%;border:1.5px solid currentColor;opacity:.6}
+    .tg b{font-family:F;font-weight:800;font-size:19pt;line-height:1.05}
+    .tg i{font-family:F;font-style:italic;font-weight:700;font-size:13pt;display:block;margin-top:1.5mm}
+    .tg small{font-size:8pt;letter-spacing:.18em;font-weight:800;margin-top:3mm;opacity:.85}
+    .tg .ln{width:80%;border-bottom:1px solid currentColor;opacity:.5;height:7mm;text-align:left;font-size:9pt;font-weight:700}
+    .t1{background:#f5e6d3;color:#7a1f2b}.t2{background:#fff;color:#1f3d2e}.t3{background:#9a2c3d;color:#fff}.t4{background:#1f3d2e;color:#f3dca4}
+    .cart{border:1px dashed #b8a98f;border-radius:3mm;height:118mm;padding:12mm;display:flex;flex-direction:column;justify-content:center;text-align:center;background:#fff}
+    .cart h3{font-size:22pt;color:#7a1f2b}.cart p{color:#5e574f;font-size:11pt;margin-top:4mm}
+    .ades{display:grid;grid-template-columns:repeat(4,1fr);gap:5mm}
+    .ad{aspect-ratio:1/1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px dashed #b8a98f}
+    .ad b{font-family:F;font-weight:800;font-size:12pt;line-height:1.05}.ad span{font-size:6.5pt;font-weight:800;letter-spacing:.14em;margin-top:1mm}
+    </style>"""
+    estilos=['t1','t2','t3','t4']
+    textos=[('Feliz','Natal','FEITO À MÃO'),('Feito','à mão','COM CARINHO'),('Com','carinho','PARA VOCÊ'),('Boas','festas','FEITO À MÃO'),
+            ('Feliz','Natal','FEITO À MÃO'),('Feito','à mão','COM CARINHO')]
+    tags=''.join(f'<div class="tg {estilos[i%4]}"><span class="furo"></span><b>{a}</b><i>{b}</i><small>{c}</small></div>' for i,(a,b,c) in enumerate(textos))
+    para=''.join(f'<div class="tg {estilos[i%4]}"><span class="furo"></span><b style="font-size:15pt">Um presente</b><i>feito à mão</i><div class="ln">Para:</div><div class="ln">De:</div></div>' for i in range(6))
+    cuid=''.join(f'<div class="tg t2" style="height:62mm"><span class="furo"></span><b style="font-size:13pt">Cuidados com o seu amigurumi</b><p style="font-size:8.5pt;color:#5e574f;margin-top:3mm;text-align:left">• Lavar à mão, com água fria e sabão neutro.<br>• Secar à sombra, deitado.<br>• Não deixar ao alcance de crianças menores de 3 anos (peças pequenas).<br>• Feito à mão: cada peça é única.</p></div>' for _ in range(6))
+    cart=''.join(f'<div class="cart" style="border-color:#c9a45c"><p class="ceja">Obrigada!</p><h3>Este amigurumi foi feito à mão, ponto por ponto, só para você.</h3><p>Se gostou, me marca nas redes e me indica para uma amiga. Isso ajuda demais quem trabalha com crochê. 💛</p><div class="linha" style="margin-top:10mm"></div><p class="nota">Seu nome / @ da sua marca</p></div>' for _ in range(2))
+    ad=''.join(f'<div class="ad {estilos[i%4]}"><b>{t}</b><span>{u}</span></div>' for i,(t,u) in enumerate([('Feito à mão','AMIGURUMI'),('Feliz Natal','COM CARINHO'),('Feito com amor','CROCHÊ'),('Boas festas','FEITO À MÃO')]*5))
+    g2='<div class="folha" style="grid-template-columns:1fr 1fr 1fr">'
+    return doc('ETIQUETAS & EMBALAGENS NATALINAS', [
+        capa('mockup-oferta','EXTRA','Etiquetas & <em>Embalagens</em> Natalinas','Tags, cartões e adesivos para imprimir e entregar seus amigurumis com acabamento de loja.'),
+        css+'<p class="ceja">Como imprimir</p><h2>Imprima, recorte e amarre.</h2><p class="lead">Use papel couché 180 g ou papel kraft. Imprima em “tamanho real” (100%), recorte nas linhas tracejadas e faça o furo para passar a fita ou o barbante.</p>'+g2+tags+'</div>',
+        css+'<p class="ceja">Tags “Para / De”</p>'+g2+para+'</div>',
+        css+'<p class="ceja">Tags de cuidados</p>'+g2+cuid+'</div>',
+        css+'<p class="ceja">Cartão de agradecimento</p><div class="folha">'+cart+'</div>',
+        css+'<p class="ceja">Adesivos redondos (5 cm)</p><p class="lead">Para fechar saquinhos e caixinhas. Imprima em papel adesivo.</p><div class="ades">'+ad+'</div>',
+    ])
+
 PDFS = {
+  'extras/etiquetas-embalagens-natalinas.pdf': pdf_etiquetas,
   'guia-metodo-vitrine-de-natal.pdf': pdf_metodo,
   'indice-visual-colecoes.pdf': pdf_indice,
   'bonus-1-codigo-amigurumi.pdf': pdf_codigo,

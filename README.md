@@ -7,6 +7,8 @@ Página de vendas estática, em português, pronta para hospedar (GitHub Pages, 
 ```
 index.html      → a página de vendas (HTML + CSS + JS num único arquivo)
 app/            → o mini app de entregáveis (área da aluna, sem login)
+upsell/         → página de upsell + downsell (depois do checkout)
+ofertas/        → textos dos order bumps/upsell e capas para o checkout
 imagens/        → todas as imagens usadas na página (.webp)
 fonte/          → arquivos-fonte usados para gerar o index.html
 ```
@@ -51,3 +53,9 @@ Tudo o que ela marca (método, calendário, favoritas, contador, calculadora) fi
 Link vazio aparece para a aluna como **"Em breve"**.
 
 Para gerar os PDFs de novo depois de mudar o texto: `python3 fonte/pdfs/gerar_pdfs.py`
+
+## Order bumps, upsell e produtos bloqueados
+
+Tudo explicado em `ofertas/ORDER-BUMPS-E-UPSELL.md`: textos prontos para o checkout, capas,
+links de liberação (`/app/?libera=gnomos`) e códigos. No app, os extras aparecem com cadeado
+na Início, na Coleção, nos Bônus e na tela "Desbloqueie mais".
