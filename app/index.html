@@ -12,10 +12,16 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icone-192.png">
 <link rel="apple-touch-icon" href="icone-192.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..900;1,9..144,500..800&family=Nunito+Sans:opsz,wght@6..12,400..900&display=swap" rel="stylesheet">
+<link rel="preload" href="fontes/Fraunces_800ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fontes/NunitoSans_400Regular.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Fraunces";src:url(fontes/Fraunces_600SemiBold.woff2) format("woff2");font-weight:500 650;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(fontes/Fraunces_800ExtraBold.woff2) format("woff2");font-weight:651 900;font-display:swap}
+@font-face{font-family:"Fraunces";src:url(fontes/Fraunces_700Bold_Italic.woff2) format("woff2");font-weight:500 900;font-style:italic;font-display:swap}
+@font-face{font-family:"Nunito Sans";src:url(fontes/NunitoSans_400Regular.woff2) format("woff2");font-weight:300 500;font-display:swap}
+@font-face{font-family:"Nunito Sans";src:url(fontes/NunitoSans_600SemiBold.woff2) format("woff2");font-weight:501 650;font-display:swap}
+@font-face{font-family:"Nunito Sans";src:url(fontes/NunitoSans_700Bold.woff2) format("woff2");font-weight:651 750;font-display:swap}
+@font-face{font-family:"Nunito Sans";src:url(fontes/NunitoSans_800ExtraBold.woff2) format("woff2");font-weight:751 1000;font-display:swap}
 :root{
   --crema:#fbf7f0;--crema-2:#f3ece2;--crema-3:#efede4;--blanco:#fff;
   --vino:#7a1f2b;--vino-hover:#5e1620;--bosque:#1f3d2e;--bosque-hondo:#172e22;
@@ -196,7 +202,7 @@ canvas.neve{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-e
 .tabela-abrev th{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--vino-metal);padding:10px 8px;text-align:left}
 .tabela-abrev th:first-child{border-top-left-radius:14px}.tabela-abrev th:last-child{border-top-right-radius:14px}
 .tabela-abrev td{padding:10px 8px;border-bottom:1px solid var(--borde);vertical-align:top;background:#fff}
-.tabela-abrev td:first-child{font-weight:700}
+.tabela-abrev td:first-child{font-weight:700;width:34%}.tabela-abrev td:nth-child(3){color:var(--texto-suave);font-size:13px;line-height:1.45}
 .tabela-abrev code{font-family:var(--sans);font-weight:800;color:var(--vino);background:var(--unidad);padding:1px 6px;border-radius:6px;white-space:nowrap}
 .tabela-abrev tr:last-child td:first-child{border-bottom-left-radius:14px}.tabela-abrev tr:last-child td:last-child{border-bottom-right-radius:14px}
 
@@ -276,6 +282,37 @@ canvas.neve{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-e
 .instalar button.x{color:#fbf7f0aa;padding:6px}
 .toast{position:fixed;left:50%;bottom:calc(var(--nav) + var(--safe-b) + 14px);transform:translate(-50%,20px);opacity:0;z-index:95;background:var(--texto);color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:700;box-shadow:0 14px 30px -10px #000;transition:.3s;pointer-events:none;max-width:90vw;text-align:center}
 .toast.on{opacity:1;transform:translate(-50%,0)}
+/* contador */
+.contador{padding:22px 18px;text-align:center}
+.contador-nome{width:100%;border:0;border-bottom:1.5px dashed var(--oro-claro);background:none;font:inherit;font-family:var(--serif);font-weight:800;font-size:19px;text-align:center;color:var(--texto);padding:6px 0;outline:0}
+.contador-num{font-family:var(--serif);font-weight:800;font-size:96px;line-height:1;color:var(--vino);margin:18px 0 4px;font-variant-numeric:tabular-nums}
+.contador-rot{font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--oro-texto)}
+.contador-btns{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:20px}
+.contador-btns button{min-height:84px;border-radius:20px;font-size:38px;font-weight:800}
+.mais{background:var(--vino-metal);color:#fff;box-shadow:0 16px 34px -14px #7a1f2bcc}
+.menos{background:var(--unidad);color:var(--vino);border:1.5px solid var(--borde)}
+.contador-meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.pontos{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:14px;font-size:14px;font-weight:700;color:var(--texto-suave)}
+.pontos input{width:70px;text-align:center;border:1.5px solid var(--borde);border-radius:10px;padding:8px;font:inherit;font-weight:800;font-size:16px;background:var(--crema)}
+.projetos{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -18px;padding:0 18px 6px}
+.projetos::-webkit-scrollbar{display:none}
+/* lightbox */
+.luz{position:fixed;inset:0;z-index:92;background:#0b120ef2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;gap:14px}
+.luz[hidden]{display:none}
+.luz img{max-width:100%;max-height:68vh;border-radius:18px;border:4px solid #fff;box-shadow:0 30px 70px -20px #000}
+.luz b{color:#fff;font-family:var(--serif);font-size:19px}
+.luz .btns{width:min(100%,420px)}
+.luz .fechar{position:absolute;top:calc(env(safe-area-inset-top) + 14px);right:14px}
+.icone-topo{width:40px;height:40px;border-radius:50%;background:#ffffff1a;color:var(--oro-claro);display:grid;place-items:center}
+.campo-txt{width:100%;min-height:50px;border:1.5px solid var(--borde);border-radius:12px;background:var(--crema);padding:0 14px;font:inherit;font-size:16px;color:var(--texto)}
+.btn.perigo{background:#fff;color:#a12a2a;border:1.5px solid #ecc9c9;box-shadow:none}
+.duplo{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mes-barra{height:6px;border-radius:99px;background:var(--unidad);overflow:hidden;margin:2px 0 10px}
+.mes-barra i{display:block;height:100%;background:linear-gradient(90deg,#c9a45c,var(--vino));border-radius:99px;transition:width .3s}
+.exemplo{display:grid;gap:4px;padding:12px 14px;border-bottom:1px dashed var(--borde)}
+.exemplo:last-child{border:0}
+.exemplo code{font-family:var(--sans);font-weight:800;color:var(--vino);font-size:14.5px}
+.exemplo span{font-size:13.5px;color:var(--texto-suave)}
 .rodape{text-align:center;font-size:12px;color:var(--gris);padding:28px 18px 8px}
 .rodape a{color:var(--vino);font-weight:800}
 .tela{animation:entra .35s ease both}
@@ -317,6 +354,11 @@ canvas.neve{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-e
     <div class="player-frame" id="player-frame"></div>
   </div>
 </div>
+<div class="luz" id="luz" hidden role="dialog" aria-modal="true" aria-labelledby="luz-nome">
+  <button class="fechar" id="luz-fechar" aria-label="Fechar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <img id="luz-img" alt=""><b id="luz-nome"></b>
+  <div class="btns"><a class="btn" id="luz-ir" href="#/colecao">Abrir as receitas desta coleção</a></div>
+</div>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
@@ -341,14 +383,17 @@ const CONFIG = {
     'mini-presentes':  [{ titulo: 'Receitas — Mini Presentes (PDF)', url: '' }],
     'pecas-estrela':   [{ titulo: 'Receitas — Peças Estrela (PDF)', url: '' }],
   },
-  indiceVisualPdf: '',             // PDF do Índice Visual completo
-  metodoPdf: '',                   // Guia do Método Vitrine de Natal™
+  indiceVisualPdf: 'pdfs/indice-visual-colecoes.pdf',   // PDF do Índice Visual
+  metodoPdf: 'pdfs/guia-metodo-vitrine-de-natal.pdf', // Guia do Método Vitrine de Natal™
   bau: [                           // Baú de Natal — receitas extras
     { titulo: 'Baú de Natal — Parte 1 (PDF)', url: '' },
     { titulo: 'Baú de Natal — Parte 2 (PDF)', url: '' },
   ],
-  bonusPdf: {                      // versões em PDF dos bônus (opcional)
-    codigo: '', acabamento: '', calculadora: '', venda: ''
+  bonusPdf: {                      // versões em PDF dos bônus (já incluídas na pasta pdfs/)
+    codigo: 'pdfs/bonus-1-codigo-amigurumi.pdf',
+    acabamento: 'pdfs/bonus-2-acabamento-boutique-paletas.pdf',
+    calculadora: 'pdfs/bonus-3-calculadora-preco-justo.pdf',
+    venda: 'pdfs/bonus-4-venda-sua-colecao-calendario.pdf',
   },
   // Videoaulas: link do YouTube, Vimeo ou arquivo .mp4
   aulas: [
@@ -399,19 +444,39 @@ const CALENDARIO = [
     ['c12','Decorar a sua casa e presentear quem você ama'] ]},
 ];
 const BONUS = [
-  { id:'codigo', n:1, nome:'Código Amigurumi™', img:'bonus-codigo-amigurumi', etq:'Trava numa abreviação? Nunca mais.', desc:'O guia de abreviações de diferentes países: pb, mp, sc, dc… Leia qualquer receita sem travar no meio da carreira.' },
+  { id:'codigo', n:1, nome:'Código Amigurumi™', img:'bonus-codigo-amigurumi', etq:'Trava numa abreviação? Nunca mais.', desc:'O guia de abreviações das receitas de crochê: am, pb, aum, dim, carr… Leia qualquer receita sem travar no meio da carreira.' },
   { id:'acabamento', n:2, nome:'Acabamento Boutique + Paletas Natalinas de Luxo', img:'bonus-acabamento-boutique', etq:'Para pararem de dizer só “que lindo”.', desc:'Combinações de cores e detalhes de acabamento que deixam suas peças com cara de caras.' },
   { id:'calculadora', n:3, nome:'Calculadora de Preço Justo', img:'bonus-calculadora', etq:'Para não dar seu trabalho de graça.', desc:'Anote materiais e tempo e tenha um preço que cobre o que você investiu.' },
   { id:'venda', n:4, nome:'Guia Venda sua Coleção + Calendário', img:'bonus-venda-sua-colecao', etq:'Para suas peças não ficarem na caixa.', desc:'Fotos com o celular, como publicar, mensagens prontas para o WhatsApp e o que fazer em cada mês.' },
 ];
 const ABREV = [
-  ['Anel mágico','am','AM','MR'],['Corrente','corr','cad','ch'],['Ponto baixíssimo','pbx','pd / pr','sl st'],
-  ['Ponto baixo','pb','pb / mp','sc'],['Ponto meio alto','pma','pma','hdc'],['Ponto alto','pa','pa / v','dc'],
-  ['Ponto alto duplo','pad','pad','tr'],['Aumento (2 pontos no mesmo)','aum','aum','inc'],['Diminuição','dim','dism','dec'],
-  ['Diminuição invisível','dim inv','dism inv','inv dec'],['Carreira / volta','carr','v / vta','rnd / R'],
-  ['Laçada','lç','laz','yo'],['Só na alça da frente','af','hd','FLO'],['Só na alça de trás','at','ht','BLO'],
-  ['Arremate','arr','rem','FO'],['Repetir','rep','rep','rep'],['Marcador de ponto','mp','marc','SM'],
-  ['Ponto pipoca','ppc','pop','pc'],['Picô','picô','piquito','picot'],['Total de pontos ao fim da carreira','(18)','(18)','(18)'],
+  ['Anel mágico','am','Enrole o fio duas vezes no dedo, puxe uma laçada e trabalhe os pontos dentro do anel. No fim, puxe a ponta para fechar o centro.'],
+  ['Correntinha','corr','Faça uma laçada e puxe pela alça que está na agulha.'],
+  ['Ponto baixíssimo','pbx','Insira a agulha, laçada e puxe direto por todas as alças. Usado para fechar e unir.'],
+  ['Ponto baixo','pb','Insira a agulha, laçada, puxe (2 alças), laçada e puxe pelas 2. É o ponto de quase todo amigurumi.'],
+  ['Ponto meio alto','pma','Laçada, insira a agulha, laçada e puxe (3 alças), laçada e puxe pelas 3.'],
+  ['Ponto alto','pa','Laçada, insira, laçada e puxe (3 alças), feche de 2 em 2.'],
+  ['Ponto alto duplo','pad','Duas laçadas antes de inserir; feche de 2 em 2 até sobrar uma alça.'],
+  ['Aumento','aum','2 pontos baixos no mesmo ponto. Aumenta 1 ponto.'],
+  ['Diminuição','dim','Una 2 pontos em 1, fechando as alças juntas. Diminui 1 ponto.'],
+  ['Diminuição invisível','dim inv','Pegue só a alça da frente de 2 pontos, laçada, puxe pelas 2 e feche como pb. Fica liso, sem furinhos.'],
+  ['Carreira','carr','Uma volta completa. No amigurumi as carreiras seguem em espiral, sem fechar.'],
+  ['Laçada','lç','Passe o fio por cima da agulha, de trás para a frente.'],
+  ['Alça da frente','af','Trabalhe só na alça mais perto de você. Cria linha decorativa ou base para babados.'],
+  ['Alça de trás','at','Trabalhe só na alça mais distante. Faz a base reta de pés, chapéus e casinhas.'],
+  ['Marcador de ponto','marc','Prenda no primeiro ponto da carreira para não perder a contagem.'],
+  ['Arremate','arr','Corte o fio, puxe pela última alça e esconda a ponta dentro da peça.'],
+  ['Repetir','*…* ×6','Repita o que está entre asteriscos o número de vezes indicado.'],
+  ['Total de pontos','(18)','Quantos pontos a carreira deve ter no fim. Confira sempre!'],
+  ['Ponto pipoca','ppc','5 pontos altos no mesmo ponto, unidos no topo. Dá relevo (bolinhas, frutinhas).'],
+  ['Picô','picô','3 correntinhas fechadas com pbx na primeira. Acabamento delicado de borda.'],
+];
+const EXEMPLOS = [
+  ['carr 1: 6 pb no am (6)','Faça 6 pontos baixos dentro do anel mágico. Total: 6.'],
+  ['carr 2: aum em todos (12)','Um aumento em cada ponto. Total: 12.'],
+  ['carr 3: *1 pb, aum* ×6 (18)','Repita 6 vezes: 1 ponto baixo e 1 aumento. Total: 18.'],
+  ['carr 4–8: pb em todos (18)','Da carreira 4 à 8, 1 ponto baixo em cada ponto.'],
+  ['carr 9: *1 pb, dim* ×6 (12)','Repita 6 vezes: 1 ponto baixo e 1 diminuição. Total: 12.'],
 ];
 const PALETAS = [
   { nome:'Vermelho Clássico', usar:'Papai Noel, Mamãe Noel e guirlandas', cores:['#9A2C3D','#F3E9D8','#1F3D2E','#C9A04F'] },
@@ -446,8 +511,9 @@ const MENSAGENS = [
 
 /* ---------- Estado (fica salvo no próprio celular) ---------- */
 const CHAVE = 'amigurumi-natal-app-v1';
-let E = { nome:'', entrou:false, feitos:{}, favs:{}, comecei:{}, calc:{}, instalarFechado:false };
+let E = { nome:'', entrou:false, feitos:{}, favs:{}, comecei:{}, calc:{}, instalarFechado:false, contadores:[{id:'c1',nome:'Meu projeto',carr:0,pts:''}], contAtivo:'c1', soFavs:false };
 try { E = Object.assign(E, JSON.parse(localStorage.getItem(CHAVE) || '{}')); } catch(_) {}
+if(!Array.isArray(E.contadores)||!E.contadores.length) E.contadores=[{id:'c1',nome:'Meu projeto',carr:0,pts:''}];
 const salvar = () => { try { localStorage.setItem(CHAVE, JSON.stringify(E)); } catch(_) {} };
 
 /* ---------- Utilidades ---------- */
@@ -466,6 +532,8 @@ const ic = {
   info:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>',
   baixar:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>',
   lupa:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+  engrenagem:'<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>',
+  contador:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 12h3M9.5 10.5v3M14 12h3"/></svg>',
   wpp:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>',
 };
 function toast(t){ const el=$('#toast'); el.textContent=t; el.classList.add('on'); clearTimeout(toast.t); toast.t=setTimeout(()=>el.classList.remove('on'),2200); }
@@ -474,14 +542,15 @@ const nevado = '<svg class="nevado" viewBox="0 0 1440 90" preserveAspectRatio="n
 function topo({titulo, sub='', voltar=null, compacto=false}){
   return `<header class="topo${compacto?' compacto':''}"><canvas class="neve" aria-hidden="true"></canvas><div class="guirlanda" aria-hidden="true">${focos(12)}</div>
   <div class="topo-in"><div class="topo-linha">${voltar?`<a class="voltar" href="${voltar}">${ic.voltar}Voltar</a>`:`<span class="marca"><span class="marca-selo">${ic.estrela}</span>MINHA COLEÇÃO</span>`}
-  <span class="marca" style="font-size:11px;opacity:.85">NATAL 2026</span></div>
+  ${voltar?'<span class="marca" style="font-size:11px;opacity:.85">NATAL 2026</span>':`<a class="icone-topo" href="#/ajustes" aria-label="Ajustes">${ic.engrenagem}</a>`}</div>
   <h1>${titulo}</h1>${sub?`<p class="sub">${sub}</p>`:''}</div>${nevado}</header>`;
 }
 function linkArquivo(a, icon=ic.pdf){
   const ok = !!a.url;
-  return `<${ok?'a':'button'} class="item" ${ok?`href="${esc(a.url)}" target="_blank" rel="noopener"`:'type="button" data-breve'}>
-    <span class="item-ico">${icon}</span><span class="item-txt"><b>${esc(a.titulo)}</b><span>${ok?'Toque para abrir ou baixar':'O link será liberado aqui'}</span></span>
-    ${ok?`<span class="item-seta">${ic.baixar}</span>`:'<span class="tag breve">Em breve</span>'}</${ok?'a':'button'}>`;
+  if(!ok) return `<button class="item" type="button" data-breve><span class="item-ico">${icon}</span><span class="item-txt"><b>${esc(a.titulo)}</b><span>O link será liberado aqui</span></span><span class="tag breve">Em breve</span></button>`;
+  const nome = a.url.split('/').pop().split('?')[0];
+  return `<div class="item" style="flex-wrap:wrap"><span class="item-ico">${icon}</span><span class="item-txt"><b>${esc(a.titulo)}</b><span>Disponível para ler e baixar</span></span><span class="tag ok">Liberado</span>
+    <span class="duplo" style="width:100%;margin-top:4px"><a class="mini-btn" style="justify-content:center" href="${esc(a.url)}" target="_blank" rel="noopener">Abrir</a><a class="mini-btn" style="justify-content:center" href="${esc(a.url)}" download="${esc(nome)}">${ic.baixar} Baixar</a></span></div>`;
 }
 function diasAteNatal(){ const h=new Date(); let n=new Date(h.getFullYear(),11,25); if(h>n) n=new Date(h.getFullYear()+1,11,25); return Math.ceil((n-new Date(h.getFullYear(),h.getMonth(),h.getDate()))/864e5); }
 function totalTarefas(){ return CALENDARIO.reduce((a,m)=>a+m.tarefas.length,0)+METODO.length; }
@@ -498,7 +567,8 @@ const TELAS = {
     const pct = Math.round(feitasTarefas()/totalTarefas()*100), prox = proximaTarefa(), nome = E.nome?`, ${esc(E.nome)}`:'';
     const instalar = (!E.instalarFechado && !matchMedia('(display-mode: standalone)').matches && !navigator.standalone) ? `
       <div class="instalar secao"><span class="marca-selo" style="flex-shrink:0">${ic.estrela}</span><div style="flex:1"><b>Deixe na tela inicial do celular</b>
-      <span>${/iphone|ipad/i.test(navigator.userAgent)?'No Safari, toque em Compartilhar → “Adicionar à Tela de Início”.':'No navegador, toque em ⋮ → “Adicionar à tela inicial”.'}</span></div>
+      <span>${INSTALAR?'Abra a sua coleção com um toque, como um aplicativo.':/iphone|ipad/i.test(navigator.userAgent)?'No Safari, toque em Compartilhar → “Adicionar à Tela de Início”.':'No navegador, toque em ⋮ → “Adicionar à tela inicial”.'}</span>
+      ${INSTALAR?'<button class="mini-btn" data-instalar style="margin-top:8px;background:var(--oro-etiqueta);border-color:transparent">Instalar agora</button>':''}</div>
       <button class="x" data-fechar-instalar aria-label="Fechar">✕</button></div>`:'';
     return topo({titulo:`Olá${nome}! Sua <em>coleção</em> está pronta.`, sub:'Receitas de amigurumi, bônus e calendário — tudo organizado para você chegar em dezembro com a mesa cheia de amigurumis.'})+`
     <div class="conteudo">
@@ -516,6 +586,7 @@ const TELAS = {
           <a class="atalho" href="#/metodo"><img src="${IMG('passo-exiba')}" alt=""><b>Método Vitrine de Natal™</b><small>4 passos</small></a>
           <a class="atalho" href="#/aulas"><img src="${IMG('aba-paixao')}" alt=""><b>Videoaulas</b><small>Técnica amigurumi</small></a>
           <a class="atalho" href="#/bau"><img src="${IMG('colecao-pecas-estrela')}" alt=""><b>Baú de Natal</b><small>Modelos extras</small></a>
+          <a class="item" href="#/contador" style="grid-column:1/-1"><span class="item-ico" style="background:var(--vino-metal);color:#fff">${ic.contador}</span><span class="item-txt"><b>Contador de carreiras</b><span>Nunca mais perca a conta no meio da peça</span></span><span class="item-seta">${ic.seta}</span></a>
         </div></section>
       <section class="secao"><div class="secao-cab"><h2>Seus 4 bônus</h2><a href="#/bonus">Ver todos</a></div>
         <div class="lista">${BONUS.map(b=>`<a class="item" href="#/bonus/${b.id}"><span class="item-ico"><img src="${IMG(b.img)}" alt=""></span><span class="item-txt"><b>${b.nome}</b><span>Bônus ${b.n}</span></span><span class="item-seta">${ic.seta}</span></a>`).join('')}</div></section>
@@ -526,7 +597,9 @@ const TELAS = {
     return topo({titulo:'A <em>Coleção</em> Natalina de Luxo', sub:'Mais de 800 receitas de amigurumi de Natal, passo a passo e em português, organizadas em 8 coleções.'})+`
     <div class="conteudo">
       <div class="aviso">${ic.info}<span>São receitas de <b>crochê</b>: o passo a passo, carreira por carreira, para crochetar cada amigurumi. Toque numa coleção para abrir os PDFs.</span></div>
-      <section class="secao"><div class="colecoes">${COLECOES.map(c=>`
+      <section class="secao"><div class="filtros" style="margin:0 0 12px;padding:0"><button class="filtro" data-sofavs="0" aria-pressed="${!E.soFavs}">Todas as coleções</button><button class="filtro" data-sofavs="1" aria-pressed="${!!E.soFavs}">♥ Minhas favoritas</button></div>
+      ${E.soFavs && !COLECOES.some(c=>E.favs[c.id])?'<div class="aviso">'+ic.info+'<span>Você ainda não marcou favoritas. Abra uma coleção e ative “Favorita da minha vitrine”.</span></div>':''}
+      <div class="colecoes">${COLECOES.filter(c=>!E.soFavs||E.favs[c.id]).map(c=>`
         <a class="colecao" href="#/colecao/${c.id}"><span class="colecao-img"><img src="${IMG(c.img)}" alt="Coleção ${c.nome}" loading="lazy">
           ${c.tag?`<span class="pilula ${c.id==='pecas-estrela'?'vinho':''}">${c.tag}</span>`:''}
           ${E.comecei[c.id]?`<span class="check-canto">${ic.check}</span>`:''}
@@ -549,7 +622,7 @@ const TELAS = {
         <div class="alternar"><b>Já comecei esta coleção</b><button class="chave" role="switch" aria-checked="${!!E.comecei[id]}" data-comecei="${id}" aria-label="Já comecei esta coleção"></button></div>
         <div class="alternar"><b>Favorita da minha vitrine</b><button class="chave" role="switch" aria-checked="${!!E.favs[id]}" data-fav="${id}" aria-label="Favorita"></button></div>
       </section>
-      <section class="secao btns"><a class="btn ouro" href="#/bonus/acabamento">Ver paletas para esta coleção</a><a class="btn sec" href="#/bonus/codigo">Travou numa abreviação? Código Amigurumi™</a></section>
+      <section class="secao btns"><a class="btn" href="#/contador">${ic.contador} Contador de carreiras</a><a class="btn ouro" href="#/bonus/acabamento">Ver paletas para esta coleção</a><a class="btn sec" href="#/bonus/codigo">Travou numa abreviação? Código Amigurumi™</a></section>
     </div>`;
   },
   indice(){
@@ -557,12 +630,12 @@ const TELAS = {
     const itens = [];
     COLECOES.forEach(c=>[c.img,...c.fotos].forEach(f=>itens.push({f,c})));
     const vis = itens.filter(i=>filtro==='todas'||i.c.id===filtro);
-    return topo({titulo:'Índice <em>Visual</em>', sub:'Todos os modelos à vista. Toque numa foto para abrir a coleção.', voltar:'#/inicio', compacto:true})+`
+    return topo({titulo:'Índice <em>Visual</em>', sub:'Todos os modelos à vista. Toque numa foto para ampliar.', voltar:'#/inicio', compacto:true})+`
     <div class="conteudo">
       <div class="card" style="padding:12px"><div class="filtros" role="group" aria-label="Filtrar por coleção" style="margin:0;padding:0 0 4px">
         <button class="filtro" data-filtro="todas" aria-pressed="${filtro==='todas'}">Todas</button>
         ${COLECOES.map(c=>`<button class="filtro" data-filtro="${c.id}" aria-pressed="${filtro===c.id}">${c.nome}</button>`).join('')}</div>
-      <div class="grade">${vis.map(i=>`<a href="#/colecao/${i.c.id}"><img src="${IMG(i.f)}" alt="${i.c.nome}" loading="lazy"><span>${i.c.nome}</span></a>`).join('')}</div></div>
+      <div class="grade">${vis.map(i=>`<a href="#/colecao/${i.c.id}" data-luz="${i.f}" data-col="${i.c.id}"><img src="${IMG(i.f)}" alt="${i.c.nome}" loading="lazy"><span>${i.c.nome}</span></a>`).join('')}</div></div>
       <section class="secao"><div class="lista">${linkArquivo({titulo:'Índice Visual completo (PDF)', url:CONFIG.indiceVisualPdf})}</div></section>
     </div>`;
   },
@@ -580,7 +653,8 @@ const TELAS = {
   calendario(){
     return topo({titulo:'Calendário da <em>Temporada</em>', sub:`O que fazer em cada mês até o Natal. Faltam ${diasAteNatal()} dias.`, compacto:true})+`
     <div class="conteudo"><div class="lista">${CALENDARIO.map((m,i)=>`
-      <article class="card mes ${i===0?'agora':''}"><div class="mes-cab"><span class="mes-ponto"></span><div><small>${m.mes}</small><b>${m.verbo}</b></div></div>
+      <article class="card mes ${i===0?'agora':''}"><div class="mes-cab"><span class="mes-ponto"></span><div style="flex:1"><small>${m.mes}</small><b>${m.verbo}</b></div><span class="tag ${m.tarefas.every(([id])=>E.feitos[id])?'ok':''}">${m.tarefas.filter(([id])=>E.feitos[id]).length}/${m.tarefas.length}</span></div>
+      <div class="mes-barra"><i style="width:${m.tarefas.filter(([id])=>E.feitos[id]).length/m.tarefas.length*100}%"></i></div>
       ${m.tarefas.map(([id,t])=>`<button class="tarefa" role="checkbox" aria-checked="${!!E.feitos[id]}" data-feito="${id}"><span class="caixa">${ic.check}</span><span class="tarefa-txt">${t}</span></button>`).join('')}</article>`).join('')}</div>
       <p class="rodape">Cada crocheteira avança no seu ritmo. O que você conquistar depende do seu trabalho e de como decidir oferecer suas peças.</p>
     </div>`;
@@ -590,6 +664,38 @@ const TELAS = {
     <div class="conteudo"><div class="lista">${CONFIG.aulas.map((a,i)=>`
       <button class="item" data-aula="${i}"><span class="item-ico" style="background:${a.url?'var(--vino-metal)':'var(--unidad)'};color:${a.url?'#fff':'var(--oro-hondo)'}">${a.url?ic.play:`<span class="aula-num">${i+1}</span>`}</span>
       <span class="item-txt"><b>${i+1}. ${a.titulo}</b><span>${a.desc}</span></span>${a.url?`<span class="item-seta">${ic.seta}</span>`:'<span class="tag breve">Em breve</span>'}</button>`).join('')}</div>
+      ${suporte()}</div>`;
+  },
+  contador(){
+    const c = E.contadores.find(x=>x.id===E.contAtivo) || E.contadores[0];
+    const pts = num(c.pts);
+    return topo({titulo:'Contador de <em>carreiras</em>', sub:'Toque no + a cada carreira terminada. Fica salvo mesmo se fechar o app.', voltar:'#/inicio', compacto:true})+`
+    <div class="conteudo">
+      <div class="projetos" role="group" aria-label="Projetos">${E.contadores.map(x=>`<button class="filtro" data-cont="${x.id}" aria-pressed="${x.id===c.id}">${esc(x.nome||'Projeto')}</button>`).join('')}<button class="filtro" data-cont-novo>+ Novo projeto</button></div>
+      <div class="card card-ouro contador" style="margin-top:10px">
+        <input class="contador-nome" data-cont-nome value="${esc(c.nome)}" maxlength="28" aria-label="Nome do projeto" placeholder="Nome do projeto">
+        <div class="contador-num" id="cont-num" aria-live="polite">${c.carr}</div>
+        <div class="contador-rot">CARREIRA</div>
+        <div class="pontos"><label for="cont-pts">Pontos nesta carreira</label><input id="cont-pts" data-cont-pts inputmode="numeric" value="${esc(c.pts)}" placeholder="—"></div>
+        <div class="contador-btns"><button class="menos" data-cont-delta="-1" aria-label="Voltar uma carreira">−</button><button class="mais" data-cont-delta="1" aria-label="Mais uma carreira">+</button></div>
+        <div class="contador-meta">
+          <button class="mini-btn" data-cont-zerar>Zerar</button>
+          ${'wakeLock' in navigator?`<button class="mini-btn ${ACORDADO?'feito':''}" data-acordar>${ACORDADO?ic.check+' Tela sempre acesa':'Manter a tela acesa'}</button>`:''}
+          ${E.contadores.length>1?'<button class="mini-btn" data-cont-apagar>Apagar projeto</button>':''}
+        </div>
+      </div>
+      <section class="secao"><a class="btn sec" href="#/bonus/codigo">Dúvida numa abreviação? Código Amigurumi™ ${ic.seta}</a></section>
+    </div>`;
+  },
+  ajustes(){
+    return topo({titulo:'Ajustes', sub:'Seu nome e o progresso ficam salvos só neste aparelho.', voltar:'#/inicio', compacto:true})+`
+    <div class="conteudo"><div class="card calc">
+      <div class="campo"><label for="aj-nome">Como você quer ser chamada?</label><input class="campo-txt" id="aj-nome" maxlength="30" value="${esc(E.nome)}" placeholder="Seu nome"></div>
+      <button class="btn" data-salvar-nome>Salvar nome</button></div>
+      <section class="secao btns">
+        ${INSTALAR?'<button class="btn ouro" data-instalar>Instalar na tela inicial</button>':''}
+        <button class="btn perigo" data-zerar-tudo>Apagar todo o meu progresso</button>
+      </section>
       ${suporte()}</div>`;
   },
   bau(){
@@ -613,10 +719,14 @@ const TELAS = {
   },
 };
 function bonusCodigo(){
-  return `<section class="secao"><div class="busca">${ic.lupa}<input id="busca-abrev" type="search" placeholder="Procure: aumento, sc, mp, FLO…" aria-label="Procurar abreviação"></div></section>
-  <section class="secao" style="margin-top:12px"><table class="tabela-abrev"><thead><tr><th>Ponto</th><th>PT</th><th>ES</th><th>EN</th></tr></thead>
-  <tbody id="abrev">${ABREV.map(r=>`<tr data-busca="${esc(r.join(' ').toLowerCase())}"><td>${r[0]}</td><td><code>${r[1]}</code></td><td><code>${r[2]}</code></td><td><code>${r[3]}</code></td></tr>`).join('')}</tbody></table>
-  <p class="rodape" style="padding-top:12px">As abreviações podem variar um pouco entre autoras. Na dúvida, confira a legenda no início de cada receita.</p></section>`;
+  return `<section class="secao"><div class="busca">${ic.lupa}<input id="busca-abrev" type="search" placeholder="Procure: aumento, pb, dim, alça…" aria-label="Procurar abreviação"></div></section>
+  <section class="secao" style="margin-top:12px"><table class="tabela-abrev"><thead><tr><th>Ponto</th><th>Abrev.</th><th>Como fazer</th></tr></thead>
+  <tbody id="abrev">${ABREV.map(r=>`<tr data-busca="${esc(r.join(' ').toLowerCase())}"><td>${r[0]}</td><td><code>${esc(r[1])}</code></td><td>${r[2]}</td></tr>`).join('')}</tbody></table>
+  <p class="rodape" id="abrev-vazio" hidden style="padding-top:12px">Nada encontrado. Tente outra palavra.</p></section>
+  <section class="secao"><div class="secao-cab"><h2>Traduzindo uma receita</h2></div>
+  <div class="card">${EXEMPLOS.map(([c,t])=>`<div class="exemplo"><code>${esc(c)}</code><span>${t}</span></div>`).join('')}</div>
+  <p class="rodape" style="padding-top:12px">Algumas autoras usam abreviações próprias. Na dúvida, confira a legenda no início de cada receita.</p></section>
+  <section class="secao"><a class="btn sec" href="#/contador">Abrir o contador de carreiras ${ic.seta}</a></section>`;
 }
 function bonusAcabamento(){
   return `<section class="secao"><div class="secao-cab"><h2>Paletas Natalinas de Luxo</h2></div><div class="lista">${PALETAS.map(p=>`
@@ -640,7 +750,7 @@ function bonusCalc(){
 function bonusVenda(){
   return `<section class="secao"><div class="secao-cab"><h2>Fotos com o celular</h2></div><div class="lista">${FOTOS.map(([t,d],i)=>`<div class="card dica"><span class="dica-num">${i+1}</span><div><b>${t}</b><span>${d}</span></div></div>`).join('')}</div></section>
   <section class="secao"><div class="secao-cab"><h2>Mensagens prontas</h2></div><div class="lista">${MENSAGENS.map(([t,m],i)=>`
-    <div class="card msg"><div class="msg-cab"><b>${t}</b><button class="mini-btn" data-copiar-msg="${i}">${ic.copiar} Copiar</button></div><div class="msg-txt">${esc(m)}</div></div>`).join('')}</div>
+    <div class="card msg"><b>${t}</b><div class="msg-txt">${esc(m)}</div><div class="duplo"><button class="mini-btn" style="justify-content:center" data-copiar-msg="${i}">${ic.copiar} Copiar</button><a class="mini-btn" style="justify-content:center;background:#e6f1ea;border-color:#bcd8c6;color:#2f6b4f" href="https://wa.me/?text=${encodeURIComponent(m)}" target="_blank" rel="noopener">${ic.wpp} Enviar no WhatsApp</a></div></div>`).join('')}</div>
     <p class="rodape" style="padding-top:12px">Troque o que está entre [COLCHETES] antes de enviar.</p></section>
   <section class="secao"><a class="btn" href="#/calendario">Abrir o Calendário da Temporada ${ic.seta}</a></section>`;
 }
@@ -670,7 +780,7 @@ function rota(){
   if(h[0]==='colecao' && h[1]) html=TELAS.colecaoItem(h[1]);
   else if(h[0]==='bonus' && h[1]) html=TELAS.bonusItem(h[1]);
   else html=(TELAS[h[0]]||TELAS.inicio)();
-  if(['indice','metodo','bau'].includes(nav)) nav='inicio';
+  if(['indice','metodo','bau','contador','ajustes'].includes(nav)) nav='inicio';
   if(!TELAS[h[0]] && !(h[0]==='colecao'||h[0]==='bonus')) nav='inicio';
   const t=$('#tela'); t.innerHTML=`<div class="tela">${html}</div>`;
   document.querySelectorAll('.nav a').forEach(a=>a.setAttribute('aria-current', a.dataset.nav===nav?'page':'false'));
@@ -685,6 +795,17 @@ window.addEventListener('hashchange', rota);
 document.addEventListener('click', e=>{
   const q = s => e.target.closest(s);
   let el;
+  if(el=q('[data-luz]')){ e.preventDefault(); abrirLuz(el.dataset.luz, el.dataset.col); return; }
+  if(el=q('[data-sofavs]')){ E.soFavs=el.dataset.sofavs==='1'; salvar(); rota(); return; }
+  if(el=q('[data-cont]')){ E.contAtivo=el.dataset.cont; salvar(); rota(); return; }
+  if(el=q('[data-cont-novo]')){ const id='c'+Date.now(); E.contadores.push({id,nome:'Projeto '+(E.contadores.length+1),carr:0,pts:''}); E.contAtivo=id; salvar(); rota(); return; }
+  if(el=q('[data-cont-delta]')){ const c=contAtual(); c.carr=Math.max(0,c.carr+(+el.dataset.contDelta)); salvar(); $('#cont-num').textContent=c.carr; if(navigator.vibrate) navigator.vibrate(18); return; }
+  if(el=q('[data-cont-zerar]')){ if(confirm('Zerar o contador deste projeto?')){ contAtual().carr=0; salvar(); rota(); } return; }
+  if(el=q('[data-cont-apagar]')){ if(confirm('Apagar este projeto?')){ E.contadores=E.contadores.filter(x=>x.id!==E.contAtivo); E.contAtivo=E.contadores[0].id; salvar(); rota(); } return; }
+  if(el=q('[data-acordar]')){ alternarAcordado(); return; }
+  if(el=q('[data-instalar]')){ instalar(); return; }
+  if(el=q('[data-salvar-nome]')){ E.nome=$('#aj-nome').value.trim().slice(0,30); salvar(); toast('Nome salvo ✨'); return; }
+  if(el=q('[data-zerar-tudo]')){ if(confirm('Apagar todo o progresso, favoritas, contadores e calculadora deste aparelho?')){ try{localStorage.removeItem(CHAVE);}catch(_){} location.hash='#/inicio'; location.reload(); } return; }
   if(el=q('[data-breve]')){ toast('Este conteúdo será liberado em breve aqui no app ✨'); return; }
   if(el=q('[data-feito]')){ const id=el.dataset.feito; E.feitos[id]=!E.feitos[id]; salvar(); if(E.feitos[id]) toast('Concluído! 🎉'); const y=scrollY; rota(); scrollTo(0,y); return; }
   if(el=q('[data-comecei]')){ const id=el.dataset.comecei; E.comecei[id]=!E.comecei[id]; salvar(); el.setAttribute('aria-checked',E.comecei[id]); return; }
@@ -696,9 +817,35 @@ document.addEventListener('click', e=>{
   if(el=q('[data-aula]')){ abrirAula(CONFIG.aulas[+el.dataset.aula]); return; }
 });
 document.addEventListener('input', e=>{
+  if(e.target.matches('[data-cont-nome]')){ contAtual().nome=e.target.value; salvar(); }
+  if(e.target.matches('[data-cont-pts]')){ contAtual().pts=e.target.value.replace(/\D/g,''); salvar(); }
   if(e.target.dataset.calc){ E.calc[e.target.dataset.calc]=e.target.value; salvar(); calcular(); }
-  if(e.target.id==='busca-abrev'){ const v=e.target.value.trim().toLowerCase(); document.querySelectorAll('#abrev tr').forEach(tr=>tr.hidden = v && !tr.dataset.busca.includes(v)); }
+  if(e.target.id==='busca-abrev'){ const v=e.target.value.trim().toLowerCase(); let n=0; document.querySelectorAll('#abrev tr').forEach(tr=>{ tr.hidden = !!v && !tr.dataset.busca.includes(v); if(!tr.hidden) n++; }); $('#abrev-vazio').hidden = n>0; }
 });
+function contAtual(){ return E.contadores.find(x=>x.id===E.contAtivo) || E.contadores[0]; }
+document.addEventListener('change', e=>{ if(e.target.matches('[data-cont-nome]')) rota(); });
+/* tela acesa enquanto crocheta */
+let ACORDADO=null;
+async function alternarAcordado(){
+  try{
+    if(ACORDADO){ await ACORDADO.release(); ACORDADO=null; toast('A tela pode apagar normalmente'); }
+    else { ACORDADO=await navigator.wakeLock.request('screen'); ACORDADO.addEventListener('release',()=>{ ACORDADO=null; }); toast('A tela vai ficar acesa enquanto você crocheta'); }
+  }catch(_){ toast('Seu celular não permitiu manter a tela acesa'); }
+  rota();
+}
+document.addEventListener('visibilitychange', async ()=>{ if(document.visibilityState==='visible' && ACORDADO && ACORDADO.released){ try{ ACORDADO=await navigator.wakeLock.request('screen'); }catch(_){} } });
+/* instalar como app */
+let INSTALAR=null;
+addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); INSTALAR=e; if(/inicio|ajustes|^$/.test(location.hash.slice(2))) rota(); });
+addEventListener('appinstalled', ()=>{ INSTALAR=null; E.instalarFechado=true; salvar(); toast('Instalado! Procure “Minha Coleção” na tela inicial 🎄'); });
+async function instalar(){ if(!INSTALAR) return; INSTALAR.prompt(); await INSTALAR.userChoice; INSTALAR=null; rota(); }
+/* ampliar foto */
+function abrirLuz(f,col){
+  const c=COLECOES.find(x=>x.id===col);
+  $('#luz-img').src=IMG(f); $('#luz-img').alt=c.nome; $('#luz-nome').textContent=c.nome; $('#luz-ir').href='#/colecao/'+col;
+  $('#luz').hidden=false; $('#luz-fechar').focus();
+}
+function fecharLuz(){ $('#luz').hidden=true; }
 function copiar(t,msg){
   const ok=()=>toast(msg);
   if(navigator.clipboard) navigator.clipboard.writeText(t).then(ok,()=>fallback());
@@ -717,8 +864,11 @@ function abrirAula(a){
 }
 function fecharAula(){ $('#player').hidden=true; $('#player-frame').innerHTML=''; }
 $('#player-fechar').addEventListener('click', fecharAula);
+$('#luz-fechar').addEventListener('click', fecharLuz);
+$('#luz-ir').addEventListener('click', fecharLuz);
+$('#luz').addEventListener('click', e=>{ if(e.target.id==='luz') fecharLuz(); });
 $('#player').addEventListener('click', e=>{ if(e.target.id==='player') fecharAula(); });
-document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !$('#player').hidden) fecharAula(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ if(!$('#player').hidden) fecharAula(); if(!$('#luz').hidden) fecharLuz(); } });
 
 /* ---------- Neve ---------- */
 const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;

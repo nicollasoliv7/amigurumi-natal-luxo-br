@@ -31,16 +31,23 @@ python3 fonte/build.py
 
 É o link que a cliente recebe depois da compra (ex.: `seudominio.com/app/`).
 Não tem senha: na primeira visita ela digita o nome (ou pula) e já entra.
-O progresso dela (passos do método, calendário, coleções favoritas, calculadora) fica salvo no próprio celular.
+Tudo o que ela marca (método, calendário, favoritas, contador, calculadora) fica salvo no próprio celular.
 
-**Para liberar os arquivos**, abra `app/index.html` e edite só o bloco `CONFIG` no começo do script:
+**O que já funciona:**
+- 8 coleções com fotos, filtro de favoritas e "já comecei"
+- Índice Visual com filtro e foto ampliada
+- Método Vitrine de Natal™ e Calendário da Temporada com progresso
+- Contador de carreiras (vários projetos, vibração, tela sempre acesa)
+- Bônus interativos: Código Amigurumi™ (com busca), paletas, calculadora de preço, mensagens prontas com botão de WhatsApp
+- 6 PDFs prontos em `app/pdfs/` (guia do método, índice visual e os 4 bônus)
+- Instalável na tela inicial, fontes locais e funciona com internet fraca
 
-- `colecoes` → link do PDF de cada uma das 8 coleções de receitas
-- `indiceVisualPdf`, `metodoPdf`, `bau`, `bonusPdf` → links dos demais PDFs
+**O que você precisa preencher** (bloco `CONFIG` no começo do script de `app/index.html`):
+- `colecoes` → link do PDF de receitas de cada uma das 8 coleções
+- `bau` → PDFs do Baú de Natal
 - `aulas` → link de cada videoaula (YouTube, Vimeo ou .mp4)
-- `suporteWhatsApp` / `suporteEmail` → contato de suporte
+- `suporteWhatsApp` / `suporteEmail`
 
 Link vazio aparece para a aluna como **"Em breve"**.
-Os bônus Código Amigurumi™, Paletas, Calculadora de Preço Justo e Mensagens prontas já funcionam dentro do app.
 
-Coloque o link do app na página de obrigado e no e-mail de acesso da sua plataforma de pagamento.
+Para gerar os PDFs de novo depois de mudar o texto: `python3 fonte/pdfs/gerar_pdfs.py`
