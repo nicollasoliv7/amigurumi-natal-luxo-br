@@ -31,7 +31,7 @@ python3 fonte/build.py
 
 ## Mini app de entregáveis (`app/`)
 
-É o link que a cliente recebe depois da compra (ex.: `seudominio.com/app/`).
+É o link que a cliente recebe depois da compra (`https://amigurumi-natal-luxo-br-app.vercel.app/`).
 Não tem senha: na primeira visita ela digita o nome (ou pula) e já entra.
 Tudo o que ela marca (método, calendário, favoritas, contador, calculadora) fica salvo no próprio celular.
 
@@ -57,5 +57,5 @@ Para gerar os PDFs de novo depois de mudar o texto: `python3 fonte/pdfs/gerar_pd
 ## Order bumps, upsell e produtos bloqueados
 
 Tudo explicado em `ofertas/ORDER-BUMPS-E-UPSELL.md`: textos prontos para o checkout, capas,
-links de liberação (`/app/?libera=gnomos`) e códigos. No app, os extras aparecem com cadeado
+links de liberação (`https://amigurumi-natal-luxo-br-app.vercel.app/?libera=gnomos`) e códigos. No app, os extras aparecem com cadeado
 na Início, na Coleção, nos Bônus e na tela "Desbloqueie mais".

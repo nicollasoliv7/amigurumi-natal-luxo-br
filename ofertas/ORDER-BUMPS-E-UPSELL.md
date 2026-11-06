@@ -89,11 +89,11 @@ Configure no bloco `CONFIG.extras` de `app/index.html`:
 
 | Produto | `checkout` | `codigo` padrão | Link de acesso que libera |
 |---|---|---|---|
-| Espirais | link de compra avulsa | `ESPIRAL27` | `/app/?libera=espirais` |
-| Gnomos | link de compra avulsa | `GNOMOS27` | `/app/?libera=gnomos` |
-| Presépio | link de compra avulsa | `PRESEPIO19` | `/app/?libera=presepio` |
-| Etiquetas | link de compra avulsa | `ETIQUETAS17` | `/app/?libera=etiquetas` |
-| Ano Inteiro | link do upsell | `ANOINTEIRO` | `/app/?libera=anointeiro` |
+| Espirais | link de compra avulsa | `ESPIRAL27` | `https://amigurumi-natal-luxo-br-app.vercel.app/?libera=espirais` |
+| Gnomos | link de compra avulsa | `GNOMOS27` | `https://amigurumi-natal-luxo-br-app.vercel.app/?libera=gnomos` |
+| Presépio | link de compra avulsa | `PRESEPIO19` | `https://amigurumi-natal-luxo-br-app.vercel.app/?libera=presepio` |
+| Etiquetas | link de compra avulsa | `ETIQUETAS17` | `https://amigurumi-natal-luxo-br-app.vercel.app/?libera=etiquetas` |
+| Ano Inteiro | link do upsell | `ANOINTEIRO` | `https://amigurumi-natal-luxo-br-app.vercel.app/?libera=anointeiro` |
 
 Na plataforma, cadastre como **link de entrega** de cada bump o endereço com `?libera=`.
 Quem comprar o bump e abrir esse link já entra com o conteúdo liberado.

@@ -2,8 +2,7 @@
 
 Antes de colar:
 1. Baixe o pacote de imagens (`imagens-perfectpay.zip`) e descompacte numa pasta do computador.
-2. Troque `SEU-DOMINIO` pelo endereço onde o site está publicado (ex.: `amigurumi-natal.vercel.app`).
-3. Abra a PerfectPay já logado e cole o prompt abaixo na extensão.
+2. Abra a PerfectPay já logado e cole o prompt abaixo na extensão.
 
 ```
 Você vai configurar na PerfectPay (já estou logado, na página da plataforma) toda a
@@ -38,35 +37,35 @@ P1 — FRONT-END
   videoaulas e 4 bônus. Acesso imediato pelo celular. Não é produto físico e não
   são receitas culinárias.
 - Imagem: 01-capa-amigurumis-natalinos-de-luxo.png
-- Entrega / link de acesso: https://SEU-DOMINIO/app/
+- Entrega / link de acesso: https://amigurumi-natal-luxo-br-app.vercel.app/
 
 P2 — ORDER BUMP: 24 Gnomos Natalinos
 - Preço: R$ 14,90 (de R$ 82,65)
 - Descrição: 24 receitas de crochê de gnomos natalinos, rápidas de fazer e
   perfeitas para presentear em set.
 - Imagem: 04-bump-gnomos.png
-- Entrega: https://SEU-DOMINIO/app/?libera=gnomos
+- Entrega: https://amigurumi-natal-luxo-br-app.vercel.app/?libera=gnomos
 
 P3 — ORDER BUMP: Espirais Natalinas Penduráveis
 - Preço: R$ 14,90 (de R$ 104,69)
 - Descrição: Receitas de crochê de enfeites em espiral para pendurar na árvore:
   Papai Noel, bonecos de neve, pinguim, árvores, anjos e gnomo.
 - Imagem: 05-bump-espirais.png
-- Entrega: https://SEU-DOMINIO/app/?libera=espirais
+- Entrega: https://amigurumi-natal-luxo-br-app.vercel.app/?libera=espirais
 
 P4 — ORDER BUMP: Etiquetas & Embalagens Natalinas
 - Preço: R$ 9,90 (de R$ 49,90)
 - Descrição: Tags, cartões de agradecimento e adesivos natalinos em PDF para
   imprimir e entregar os amigurumis com acabamento de loja.
 - Imagem: 06-bump-etiquetas.png
-- Entrega: https://SEU-DOMINIO/app/?libera=etiquetas
+- Entrega: https://amigurumi-natal-luxo-br-app.vercel.app/?libera=etiquetas
 
 P5 — ORDER BUMP: Presépio & Anjinhos de Crochê
 - Preço: R$ 12,90 (de R$ 64,00)
 - Descrição: Receitas de crochê para montar o presépio completo: Sagrada Família,
   Reis Magos, pastor, animais e anjinhos.
 - Imagem: 07-bump-presepio.png
-- Entrega: https://SEU-DOMINIO/app/?libera=presepio
+- Entrega: https://amigurumi-natal-luxo-br-app.vercel.app/?libera=presepio
 
 P6 — UPSELL: Amigurumis o Ano Inteiro
 - Preço: R$ 47,00 (de R$ 197,00)
@@ -74,14 +73,14 @@ P6 — UPSELL: Amigurumis o Ano Inteiro
   festa junina, Dia dos Pais, chá de bebê, Dia das Crianças e mais) + calendário
   anual de vendas.
 - Imagem: 08-upsell-ano-inteiro.png
-- Entrega: https://SEU-DOMINIO/app/?libera=anointeiro
+- Entrega: https://amigurumi-natal-luxo-br-app.vercel.app/?libera=anointeiro
 
 P7 — DOWNSELL: Amigurumis Essencial
 - Preço: R$ 27,00 (de R$ 97,00)
 - Descrição: 4 coleções de receitas de crochê para Páscoa, Dia das Mães, chá de
   bebê e Dia das Crianças.
 - Imagem: 09-downsell-essencial.png
-- Entrega: https://SEU-DOMINIO/app/?libera=essencial
+- Entrega: https://amigurumi-natal-luxo-br-app.vercel.app/?libera=essencial
 
 ## 2. Pagamento (em TODOS os produtos/planos)
 - Habilite SOMENTE Pix e Cartão de crédito. Desative boleto, PicPay, Nubank,
@@ -112,7 +111,7 @@ P7 — DOWNSELL: Amigurumis Essencial
   finalizou. Seu acesso às receitas de crochê de Natal ainda está reservado por
   R$ 19,90 — é só concluir o Pix por aqui: [link do checkout]"
 - Página de obrigado / redirecionamento após compra aprovada:
-  https://SEU-DOMINIO/upsell/
+  https://amigurumi-natal-luxo-br.vercel.app/upsell/
 
 ## 4. Order bumps no checkout do P1 (nesta ordem)
 Se a plataforma tiver opção de o bump aparecer só depois que a pessoa digita o
@@ -128,7 +127,7 @@ e-mail, ative. Use para cada um:
 Mostre o "de/por" (preço riscado) se o campo existir.
 
 ## 5. Upsell e downsell (funil pós-compra)
-- Crie o funil: compra aprovada do P1 → página https://SEU-DOMINIO/upsell/
+- Crie o funil: compra aprovada do P1 → página https://amigurumi-natal-luxo-br.vercel.app/upsell/
   (oferta P6, compra com 1 clique) → se recusar, mesma página mostra P7.
 - Gere o link/script de "compra com 1 clique" do P6 e do P7 (aceitar) e me passe
   também o link de recusa, se a plataforma usar.
