@@ -3,7 +3,8 @@
 Textos prontos para colar no checkout (Kiwify, Hotmart, Eduzz, Perfect Pay…).
 As capas estão em `ofertas/capas/` (800×800, PNG).
 
-Os bumps 1 e 2 seguem a mesma ideia, estrutura e preço do checkout oficial (que roda com 2 bumps a R$27).
+Os bumps 1 e 2 seguem a mesma ideia e estrutura do checkout oficial (que roda com 2 bumps a R$27).
+Como o Front-End agora custa **R$19,90**, todos os bumps foram reprecificados para ficar abaixo do produto principal.
 Os bumps 3 e 4 são novos.
 
 ---
@@ -20,44 +21,44 @@ Os bumps 3 e 4 são novos.
 
 ---
 
-## Bump 1 — Espirais Natalinas Penduráveis · R$27  *(do original)*
+## Bump 1 — Espirais Natalinas Penduráveis · R$14,90  *(do original)*
 
 - **Selo:** 🎄 OFERTA ÚNICA · SÓ NESTA PÁGINA
-- **Título:** SIM! Adicione as **Espirais Natalinas Penduráveis** por apenas R$27
+- **Título:** SIM! Adicione as **Espirais Natalinas Penduráveis** por apenas R$14,90
 - **Subtítulo:** Peças rápidas que vendem em packs para a árvore
 - **Texto:** Enfeites de amigurumi em espiral para pendurar na árvore: Papai Noel, bonecos de neve, pinguim, arvorezinhas, anjos, gnomo e mais. Rápidos de crochetar, vendem muito bem em packs e ficam lindos pendurados juntos. Disponível só nesta página.
-- **Preço:** De R$104,69 → **R$27** (-74%) · Você economiza R$77,69
+- **Preço:** De R$104,69 → **R$14,90** (-86%) · Você economiza R$89,79
 - **Capa:** `ofertas/capas/espirais.png`
 
 > ⚠️ No original, as receitas desse bump estão **em inglês** e a página avisa isso
 > ("use o Código Amigurumi™ para ler sem problema"). Se o seu material também estiver em inglês,
 > acrescente essa frase ao texto. Não venda como "em português" se não for.
 
-## Bump 2 — 24 Gnomos Natalinos · R$27  *(do original)*
+## Bump 2 — 24 Gnomos Natalinos · R$14,90  *(do original)*
 
 - **Selo:** 🎁 OFERTA ÚNICA · SÓ NESTA PÁGINA
-- **Título:** SIM! Adicione os **24 Gnomos Natalinos** por apenas R$27
+- **Título:** SIM! Adicione os **24 Gnomos Natalinos** por apenas R$14,90
 - **Subtítulo:** Os queridinhos do Natal, rápidos de crochetar e perfeitos para presentear em set
 - **Texto:** 24 modelos de gnomos natalinos em crochê, com gorro comprido e barba fofinha. São peças pequenas e rápidas, que aproveitam sobras de linha e ficam lindas em grupo: na mesa, pendurados na árvore ou em kits de presente. Disponível só nesta página.
-- **Preço:** De R$82,65 → **R$27** (-67%) · Você economiza R$55,65
+- **Preço:** De R$82,65 → **R$14,90** (-82%) · Você economiza R$67,75
 - **Capa:** `ofertas/capas/gnomos.png`
 
-## Bump 3 — Presépio & Anjinhos de Crochê · R$19  *(novo)*
+## Bump 3 — Presépio & Anjinhos de Crochê · R$12,90  *(novo)*
 
 - **Selo:** ⭐ OFERTA ÚNICA · SÓ NESTA PÁGINA
-- **Título:** SIM! Adicione o **Presépio & Anjinhos de Crochê** por apenas R$19
+- **Título:** SIM! Adicione o **Presépio & Anjinhos de Crochê** por apenas R$12,90
 - **Subtítulo:** O centro da mesa de Natal, feito por você
 - **Texto:** Receitas de amigurumi para montar o presépio completo: Sagrada Família, Reis Magos, pastor, animais da manjedoura e anjinhos. Uma peça de muito valor afetivo, que as famílias guardam por anos e encomendam com antecedência. Disponível só nesta página.
-- **Preço:** De R$64,00 → **R$19** (-70%) · Você economiza R$45,00
+- **Preço:** De R$64,00 → **R$12,90** (-80%) · Você economiza R$51,10
 - **Capa:** `ofertas/capas/presepio.png`
 
-## Bump 4 — Etiquetas & Embalagens Natalinas · R$17  *(novo — arquivo já pronto)*
+## Bump 4 — Etiquetas & Embalagens Natalinas · R$9,90  *(novo — arquivo já pronto)*
 
 - **Selo:** 🎀 OFERTA ÚNICA · SÓ NESTA PÁGINA
-- **Título:** SIM! Adicione as **Etiquetas & Embalagens Natalinas** por apenas R$17
+- **Título:** SIM! Adicione as **Etiquetas & Embalagens Natalinas** por apenas R$9,90
 - **Subtítulo:** Entregue seus amigurumis com acabamento de loja
 - **Texto:** Tags, cartões de agradecimento e adesivos natalinos para imprimir em casa. É o detalhe que transforma o seu amigurumi em presente — e faz a cliente lembrar do seu nome. Disponível só nesta página.
-- **Preço:** De R$49,90 → **R$17** (-66%) · Você economiza R$32,90
+- **Preço:** De R$49,90 → **R$9,90** (-80%) · Você economiza R$40,00
 - **Capa:** `ofertas/capas/etiquetas.png`
 - **Arquivo:** `app/pdfs/extras/etiquetas-embalagens-natalinas.pdf` (já gerado)
 

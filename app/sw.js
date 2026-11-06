@@ -1,5 +1,5 @@
 // Cache para o app abrir rápido e funcionar mesmo com internet fraca.
-const CACHE = 'minha-colecao-v2';
+const CACHE = 'minha-colecao-v3';
 const BASE = ['./', './index.html', './manifest.webmanifest', './icone-192.png',
   './fontes/Fraunces_600SemiBold.woff2', './fontes/Fraunces_800ExtraBold.woff2', './fontes/Fraunces_700Bold_Italic.woff2',
   './fontes/NunitoSans_400Regular.woff2', './fontes/NunitoSans_600SemiBold.woff2', './fontes/NunitoSans_700Bold.woff2', './fontes/NunitoSans_800ExtraBold.woff2'];

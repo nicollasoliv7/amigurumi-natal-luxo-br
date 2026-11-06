@@ -24,7 +24,7 @@ body{{width:800px;height:800px;overflow:hidden}}
 .top{{position:relative;text-align:center;margin-top:30px;font-size:17px;letter-spacing:.28em;font-weight:800;color:#d9c39a}}
 .sel{{position:absolute;top:58px;right:58px;width:132px;height:132px;border-radius:50%;background:linear-gradient(150deg,#fbf0d2,#d6b064);
   color:#7a1f2b;display:grid;place-items:center;text-align:center;font-family:F;font-weight:800;line-height:1;box-shadow:0 14px 30px -8px #000;transform:rotate(8deg);z-index:3}}
-.sel b{{font-size:44px;display:block}} .sel span{{font-family:N;font-size:14px;letter-spacing:.12em}}
+.sel b{{font-family:N;font-weight:800;font-size:40px;display:block}} .sel span{{font-family:N;font-size:14px;letter-spacing:.12em}}
 .ilu{{position:absolute;left:0;right:0;top:120px;height:400px;display:flex;align-items:center;justify-content:center}}
 .tit{{position:absolute;left:60px;right:60px;bottom:96px;text-align:center}}
 .tit h1{{font-family:F;font-weight:800;font-size:66px;line-height:1.02;color:#fffaf1;text-shadow:0 4px 18px #0007}}
@@ -79,18 +79,22 @@ ILU = {
                                    ('MÃES','#e8b4b8','#7a1f2b'),('JUNINA','#e7bf62','#3b2b0e'),('PAIS','#8fa9bc','#1f2a3a'),('BEBÊ','#f7e7e3','#7a1f2b'),
                                    ('PRIMAV.','#3f7d5c','#fff'),('CRIANÇA','#c9a04f','#fff'),('HALLOW.','#d97b2b','#fff'),('NATAL','#b3263a','#fff')])) + '</svg>',
 }
+ILU['essencial'] = '<svg width="540" height="300" viewBox="0 0 640 260">' + ''.join(
+   f'<g transform="translate({80+i*160} 130)"><circle r="66" fill="{c}" stroke="#c9a45c" stroke-width="4"/><text y="8" text-anchor="middle" font-family="N" font-weight="800" font-size="21" fill="{t}">{m}</text></g>'
+   for i, (m, c, t) in enumerate([('PÁSCOA','#f3dca4','#7a1f2b'),('MÃES','#e8b4b8','#7a1f2b'),('BEBÊ','#f7e7e3','#7a1f2b'),('CRIANÇA','#c9a04f','#fff')])) + '</svg>'
 
 CAPAS = {
- 'espirais': ('', 'ORDER BUMP', 'Espirais <em>Natalinas</em>', 'Enfeites de amigurumi para pendurar na árvore', '-74%'),
- 'gnomos':   ('', 'ORDER BUMP', '24 <em>Gnomos</em> Natalinos', 'Receitas de amigurumi rápidas para presentear em set', '-67%'),
- 'presepio': ('vinho', 'ORDER BUMP', 'Presépio & <em>Anjinhos</em>', 'Receitas de amigurumi para montar o presépio completo', '-70%'),
- 'etiquetas':('vinho', 'ORDER BUMP', 'Etiquetas & <em>Embalagens</em>', 'Tags natalinas para imprimir e presentear com acabamento de loja', '-66%'),
+ 'espirais': ('', 'ORDER BUMP', 'Espirais <em>Natalinas</em>', 'Enfeites de amigurumi para pendurar na árvore', '-86%'),
+ 'gnomos':   ('', 'ORDER BUMP', '24 <em>Gnomos</em> Natalinos', 'Receitas de amigurumi rápidas para presentear em set', '-82%'),
+ 'presepio': ('vinho', 'ORDER BUMP', 'Presépio & <em>Anjinhos</em>', 'Receitas de amigurumi para montar o presépio completo', '-80%'),
+ 'etiquetas':('vinho', 'ORDER BUMP', 'Etiquetas & <em>Embalagens</em>', 'Tags natalinas para imprimir e presentear com acabamento de loja', '-80%'),
  'anointeiro':('', 'OFERTA ÚNICA', 'Amigurumis o <em>Ano Inteiro</em>', 'Coleções de amigurumi para vender em todas as datas do ano', '12'),
+ 'essencial':('vinho', 'OFERTA ÚNICA', 'Amigurumis <em>Essencial</em>', 'As 4 datas que mais vendem amigurumi depois do Natal', '4'),
 }
 
 def html(k):
     cls, _, tit, sub, sel = CAPAS[k]
-    selo = f'<div class="sel"><div><b>{sel}</b><span>{"COLEÇÕES" if k=="anointeiro" else "HOJE"}</span></div></div>'
+    selo = f'<div class="sel"><div><b>{sel}</b><span>{"COLEÇÕES" if k in ("anointeiro","essencial") else "HOJE"}</span></div></div>'
     return f'''<!DOCTYPE html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>
     <div class="c {cls}">{LUZES}<div class="m"></div>{selo}<div class="top">AMIGURUMIS NATALINOS DE LUXO</div>
     <div class="ilu">{ILU[k]}</div><div class="tit"><h1>{tit}</h1><p>{sub}</p></div><div class="rod">{"PDF PARA IMPRIMIR" if k=="etiquetas" else "RECEITAS DE CROCHÊ · PASSO A PASSO"}</div></div></body></html>'''

@@ -447,25 +447,27 @@ const CONFIG = {
     presepio:   { checkout: '', codigo: 'PRESEPIO19', arquivos: [{ titulo: 'Receitas — Presépio & Anjinhos (PDF)', url: '' }] },
     etiquetas:  { checkout: '', codigo: 'ETIQUETAS17', arquivos: [{ titulo: 'Etiquetas & Embalagens Natalinas (PDF para imprimir)', url: 'pdfs/extras/etiquetas-embalagens-natalinas.pdf' }] },
     anointeiro: { checkout: '', codigo: 'ANOINTEIRO', arquivos: [{ titulo: 'Amigurumis o Ano Inteiro — 12 coleções (PDF)', url: '' }] },
+    // Downsell: só aparece no app para quem comprou (?libera=essencial)
+    essencial:  { checkout: '', codigo: 'ESSENCIAL', arquivos: [{ titulo: 'Amigurumis Essencial — 4 coleções (PDF)', url: '' }] },
   },
 };
 /* ===================================================================== */
 
 const IMG = n => `../imagens/${n}.webp`;
 const EXTRAS = [
-  { id:'espirais', tipo:'Oferta especial', nome:'Espirais Natalinas Penduráveis', capa:'extras/espirais.webp', preco:'R$27', de:'R$104,69', off:'-74%',
+  { id:'espirais', tipo:'Oferta especial', nome:'Espirais Natalinas Penduráveis', capa:'extras/espirais.webp', preco:'R$14,90', de:'R$104,69', off:'-86%',
     gancho:'Peças rápidas que vendem em packs para a árvore',
     desc:'Enfeites de amigurumi em espiral para pendurar na árvore: Papai Noel, bonecos de neve, pinguim, arvorezinhas, anjos, gnomo e mais. Rápidos de crochetar, vendem muito bem em packs e ficam lindos pendurados juntos.',
     itens:['Receitas de crochê de espirais natalinas, passo a passo','Personagens: Papai Noel, bonecos de neve, pinguim, árvores, anjos e gnomo','Peças pequenas, que aproveitam sobras de linha','Ideais para vender em kits de 3, 5 ou 10 unidades'] },
-  { id:'gnomos', tipo:'Oferta especial', nome:'24 Gnomos Natalinos', capa:'extras/gnomos.webp', preco:'R$27', de:'R$82,65', off:'-67%',
+  { id:'gnomos', tipo:'Oferta especial', nome:'24 Gnomos Natalinos', capa:'extras/gnomos.webp', preco:'R$14,90', de:'R$82,65', off:'-82%',
     gancho:'Os queridinhos do Natal, rápidos de crochetar e perfeitos para presentear em set',
     desc:'24 modelos de gnomos natalinos em crochê, com gorro comprido e barba fofinha. São peças pequenas e rápidas, que aproveitam sobras de linha e ficam lindas em grupo: na mesa, pendurados na árvore ou em kits de presente.',
     itens:['24 receitas de gnomos natalinos, passo a passo','Gorros, barbas e roupinhas em vários estilos','Peças pequenas: ótimas para kits e lembrancinhas','Combinam com todas as coleções da sua vitrine'] },
-  { id:'presepio', tipo:'Novo', nome:'Presépio & Anjinhos de Crochê', capa:'extras/presepio.webp', preco:'R$19', de:'R$64,00', off:'-70%',
+  { id:'presepio', tipo:'Novo', nome:'Presépio & Anjinhos de Crochê', capa:'extras/presepio.webp', preco:'R$12,90', de:'R$64,00', off:'-80%',
     gancho:'O centro da mesa de Natal, feito por você',
     desc:'Receitas de amigurumi para montar o presépio completo: Sagrada Família, Reis Magos, pastor, animais da manjedoura e anjinhos. Uma peça de muito valor afetivo, que as famílias guardam por anos e encomendam com antecedência.',
     itens:['Sagrada Família: Maria, José e o Menino Jesus','Três Reis Magos, pastor e ovelhinhas','Anjinhos para a árvore e para o presépio','Sugestão de montagem do presépio completo'] },
-  { id:'etiquetas', tipo:'Novo', nome:'Etiquetas & Embalagens Natalinas', capa:'extras/etiquetas.webp', preco:'R$17', de:'R$49,90', off:'-66%',
+  { id:'etiquetas', tipo:'Novo', nome:'Etiquetas & Embalagens Natalinas', capa:'extras/etiquetas.webp', preco:'R$9,90', de:'R$49,90', off:'-80%',
     gancho:'Entregue seus amigurumis com acabamento de loja',
     desc:'Tags, cartões e adesivos natalinos para imprimir em casa. É o detalhe que transforma o seu amigurumi em presente — e faz a cliente lembrar do seu nome.',
     itens:['12 tags natalinas para pendurar (4 estilos)','Tags “Para / De” e tags de cuidados com a peça','Cartão de agradecimento para a cliente','20 adesivos redondos para fechar saquinhos e caixas'] },
@@ -473,7 +475,12 @@ const EXTRAS = [
     gancho:'Continue vendendo depois do Natal: uma coleção para cada data do ano',
     desc:'O Natal é só o começo. Com as coleções do ano inteiro, você chega a cada data comemorativa com a vitrine pronta: Páscoa, Dia das Mães, festa junina, Dia dos Pais, Dia das Crianças e mais. Receitas de amigurumi passo a passo, no mesmo formato da coleção de Natal.',
     itens:['12 coleções sazonais de receitas de amigurumi','Páscoa, Dia das Mães, junina, Dia dos Pais, chá de bebê, Dia das Crianças e mais','Calendário anual: o que crochetar e quando começar cada data','Mesmo padrão: passo a passo e em português'] },
+  { id:'essencial', oculto:true, tipo:'Oferta única', nome:'Amigurumis Essencial', capa:'extras/essencial.webp', preco:'R$27', de:'R$97,00', off:'-72%',
+    gancho:'As 4 datas que mais vendem amigurumi depois do Natal',
+    desc:'Coleções de receitas de amigurumi para as datas mais fortes do ano: Páscoa, Dia das Mães, chá de bebê e Dia das Crianças. Mesmo formato da coleção de Natal, passo a passo.',
+    itens:['4 coleções sazonais de receitas de amigurumi','Páscoa, Dia das Mães, chá de bebê e Dia das Crianças','Mesmo padrão: passo a passo e em português'] },
 ];
+const VISIVEIS = () => EXTRAS.filter(x=>!x.oculto || liberado(x.id));
 const COLECOES = [
   { id:'papai-noel', nome:'Papai Noel e Mamãe Noel', img:'colecao-papai-noel', tag:'Ideal para presentear', det:'', fotos:['galeria-papai-noel','modelo-01','modelo-04'] },
   { id:'renas-duendes', nome:'Renas e Duendes', img:'colecao-renas-duendes', det:'', fotos:['modelo-basico-04'] },
@@ -639,8 +646,8 @@ function cardExtra(x){
     <span class="extra-cta">${lib?ic.check+' Acessar':ic.cadeado+' Desbloquear'}</span></span></a>`;
 }
 function vitrineExtras(titulo='Conteúdos para desbloquear'){
-  const bloq = EXTRAS.filter(x=>!liberado(x.id)), lib = EXTRAS.filter(x=>liberado(x.id));
-  if(!EXTRAS.length) return '';
+  const bloq = VISIVEIS().filter(x=>!liberado(x.id)), lib = VISIVEIS().filter(x=>liberado(x.id));
+  if(!VISIVEIS().length) return '';
   return `<section class="secao"><div class="secao-cab"><h2>${bloq.length?titulo:'Seus extras'}</h2><a href="#/extras">Ver todos</a></div>
     <div class="vitrine">${[...bloq,...lib].map(cardExtra).join('')}</div></section>`;
 }
@@ -653,7 +660,7 @@ function liberar(ids, silencioso){
 (function liberarPorLink(){
   const p = new URLSearchParams(location.search).get('libera');
   if(!p) return;
-  const ids = p.toLowerCase()==='tudo' ? EXTRAS.map(x=>x.id) : p.toLowerCase().split(/[,\s]+/);
+  const ids = p.toLowerCase()==='tudo' ? EXTRAS.filter(x=>!x.oculto).map(x=>x.id) : p.toLowerCase().split(/[,\s]+/);
   const novos = liberar(ids, true);
   if(novos.length) sessionStorage.setItem('liberou', novos.join(','));
   history.replaceState(null,'',location.pathname+location.hash);
@@ -788,9 +795,9 @@ const TELAS = {
     </div>`;
   },
   extras(){
-    const n = EXTRAS.filter(x=>!liberado(x.id)).length;
+    const n = VISIVEIS().filter(x=>!liberado(x.id)).length;
     return topo({titulo:'Desbloqueie <em>mais</em>', sub: n?`Você tem ${n} ${n>1?'conteúdos':'conteúdo'} para desbloquear e completar a sua vitrine de Natal.`:'Você já liberou todos os conteúdos extras. Aproveite!', voltar:'#/inicio', compacto:true})+`
-    <div class="conteudo"><div class="lista-extras">${[...EXTRAS.filter(x=>!liberado(x.id)),...EXTRAS.filter(x=>liberado(x.id))].map(cardExtra).join('')}</div>
+    <div class="conteudo"><div class="lista-extras">${[...VISIVEIS().filter(x=>!liberado(x.id)),...VISIVEIS().filter(x=>liberado(x.id))].map(cardExtra).join('')}</div>
     <section class="secao card calc"><b style="font-family:var(--serif);font-size:17px">Já comprou algum extra?</b>
       <span style="font-size:13.5px;color:var(--texto-suave)">Digite o código de liberação que chegou no seu e-mail.</span>
       <form class="codigo-form" data-form-codigo><input name="codigo" placeholder="Seu código" autocomplete="off" aria-label="Código de liberação"><button type="submit">Liberar</button></form></section>
